@@ -13,20 +13,26 @@ namespace WebCrawler
 
         // exemple repose : https://departement-info-cem.github.io/3N5-Prog3/docs/Projet1_ResultatsAttendus.pdf
         // root link : https://departement-info-cem.github.io/3N5-Prog3/testbot/index.html
-        private static Queue<string> queue = new Queue<string>();
-        private static HashSet<String> visitedWebsite = new HashSet<String>();
-        static string baseURL = "https://departement-info-cem.github.io/3N5-Prog3/testbot/index.html";
 
 
+        private static Queue<Page> queue = new Queue<Page>();
+        private static HashSet<Page> visitedWebsite = new HashSet<Page>();
+
+      
+        static Page page_initiale = new Page("https://departement-info-cem.github.io/3N5-Prog3/testbot/index.html" , 99  );
 
         static void Main(string[] args)
         {
-            discoverWeb(baseURL);
+
+            Debug.Write($"-------------------------------------------------------------------------");
+            discoverWeb(page_initiale);
+            Debug.Write($"-------------------------------------------------------------------------");
+
 
         }
 
 
-        private static void discoverWeb(String root)
+        private static void discoverWeb(Page root)
         {
 
             try
@@ -37,30 +43,42 @@ namespace WebCrawler
 
                 while (queue.Count > 0)
                 {
-                    string v = queue.Dequeue();
+                    Page pageCourante = queue.Dequeue();
 
                     // connect to url
                     HtmlWeb web = new HtmlWeb();
-                    var htmlDoc = web.Load(v);
+                    var htmlDoc = web.Load(pageCourante.url);
 
-                    Debug.WriteLine($"Exploration de  >>  {v}");
+                    Debug.WriteLine($"Exploration de  >>  {pageCourante.url}");
+
+
+                    // exctract emails..
+                    ////
+
+
 
                     // extract absolute links
-                    var htmlNodes = htmlDoc.DocumentNode.SelectNodes("//a[@href]");
-                    foreach (var n in htmlNodes)
+                    if (pageCourante.depth!=0)
                     {
-
-                        string href = n.Attributes["href"].Value;
-                        string absURL = GetAbsoluteUrlString(baseURL, href);
-
-                        // only add if never visited
-                        if (!visitedWebsite.Contains(absURL))
+                        var htmlNodes = htmlDoc.DocumentNode.SelectNodes("//a[@href]");
+                        foreach (var node in htmlNodes)
                         {
-                            visitedWebsite.Add(absURL);
-                            queue.Enqueue(absURL);
-                        }
 
+                            string href = node.Attributes["href"].Value;
+                            string absURL = GetAbsoluteUrlString(pageCourante.url, href);
+                            Page new_lien = new Page(absURL, pageCourante.depth - 1);
+
+
+                            // only add if never visited
+                            if (!visitedWebsite.Contains(new_lien))
+                            {
+                                visitedWebsite.Add(new_lien);
+                                queue.Enqueue(new_lien);
+                            }
+
+                        }
                     }
+                   
 
 
                 }
