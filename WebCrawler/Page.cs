@@ -11,6 +11,8 @@ namespace WebCrawler
         public string url { get; set; }
         public int depth { get; set; }
 
+
+
         public Page(string url, int depth)
         {
             this.url = url;
