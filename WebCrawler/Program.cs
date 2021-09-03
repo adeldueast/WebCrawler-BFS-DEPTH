@@ -19,16 +19,16 @@ namespace WebCrawler
         private static HashSet<Page> visitedWebsite = new HashSet<Page>();
 
       
-        static Page page_initiale = new Page("https://departement-info-cem.github.io/3N5-Prog3/testbot/index.html" , 99  );
+        static Page page_initiale = new Page("https://departement-info-cem.github.io/3N5-Prog3/testbot/index.html" , 1  );
 
         static void Main(string[] args)
         {
 
-            Debug.Write($"-------------------------------------------------------------------------");
+            Console.WriteLine($"-------------------------------------------------------------------------");
             discoverWeb(page_initiale);
-            Debug.Write($"-------------------------------------------------------------------------");
+            Console.WriteLine($"-------------------------------------------------------------------------");
 
-
+            Console.ReadKey();
         }
 
 
@@ -49,7 +49,7 @@ namespace WebCrawler
                     HtmlWeb web = new HtmlWeb();
                     var htmlDoc = web.Load(pageCourante.url);
 
-                    Debug.WriteLine($"Exploration de  >>  {pageCourante.url}");
+                    Console.WriteLine($"Exploration de  >>  {pageCourante.url}");
 
 
                     // exctract emails..
@@ -88,7 +88,7 @@ namespace WebCrawler
             {
 
 
-                Debug.WriteLine(e.Message);
+                Console.WriteLine(e.Message);
 
             }
 
