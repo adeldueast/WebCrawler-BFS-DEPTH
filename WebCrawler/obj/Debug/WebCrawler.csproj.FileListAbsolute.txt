@@ -1,0 +1,11 @@
+C:\Users\adelk\Desktop\WebCrawler\WebCrawler\bin\Debug\WebCrawler.exe.config
+C:\Users\adelk\Desktop\WebCrawler\WebCrawler\bin\Debug\WebCrawler.exe
+C:\Users\adelk\Desktop\WebCrawler\WebCrawler\bin\Debug\WebCrawler.pdb
+C:\Users\adelk\Desktop\WebCrawler\WebCrawler\bin\Debug\HtmlAgilityPack.dll
+C:\Users\adelk\Desktop\WebCrawler\WebCrawler\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\adelk\Desktop\WebCrawler\WebCrawler\bin\Debug\HtmlAgilityPack.xml
+C:\Users\adelk\Desktop\WebCrawler\WebCrawler\obj\Debug\WebCrawler.csproj.AssemblyReference.cache
+C:\Users\adelk\Desktop\WebCrawler\WebCrawler\obj\Debug\WebCrawler.csproj.CoreCompileInputs.cache
+C:\Users\adelk\Desktop\WebCrawler\WebCrawler\obj\Debug\WebCrawler.csproj.CopyComplete
+C:\Users\adelk\Desktop\WebCrawler\WebCrawler\obj\Debug\WebCrawler.exe
+C:\Users\adelk\Desktop\WebCrawler\WebCrawler\obj\Debug\WebCrawler.pdb
