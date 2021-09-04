@@ -67,6 +67,7 @@ namespace WebCrawler
         }
 
 
+
         // Main functions
         private static void discoverWeb(Page rootURL, string Path)
         {
@@ -76,9 +77,9 @@ namespace WebCrawler
             MessageValidation();
             try
             {
+
                 queue.Enqueue(rootURL);
                 visitedWebsite.Add(rootURL);
-
 
                 while (queue.Count > 0)
                 {
@@ -95,18 +96,16 @@ namespace WebCrawler
                     Console.WriteLine($"Exploration de  >>  {pageCourante.url}");
 
 
-                    Emails(htmlDoc.Text, emails);
+                   var textModified =  Emails(htmlDoc.Text, emails);
 
 
 
 
                     string full_path = ($"{Path}/{fileName}");
                     //creer un fichier et ecrit le body du loaded seulement si le nom du fichier contient n'est pas vide. 
-                    if (fileName.Length > 0) using (StreamWriter objFichierAEcrire = new StreamWriter(full_path)) objFichierAEcrire.Write(htmlDoc.Text);
+                    if (fileName.Length > 0) using (StreamWriter objFichierAEcrire = new StreamWriter(full_path)) objFichierAEcrire.Write(textModified);
 
                     // exctract emails..
-
-
 
 
                     // extract absolute links
@@ -151,7 +150,7 @@ namespace WebCrawler
 
         }
 
-        public static void Emails(string text, HashSet<string> emails)
+        public static string Emails(string text, HashSet<string> emails)
         {
             const string MatchEmailPattern =
               @"(([\w-]+\.)+[\w-]+|([a-zA-Z]{1}|[\w-]{2,}))@"
@@ -162,6 +161,7 @@ namespace WebCrawler
             Regex rx = new Regex(
               MatchEmailPattern,
               RegexOptions.Compiled | RegexOptions.IgnoreCase);
+            var newTEXT = Regex.Replace(text, MatchEmailPattern, "correc@ti.con");
 
             // Find matches.
             MatchCollection matches = rx.Matches(text);
@@ -174,6 +174,7 @@ namespace WebCrawler
             {
                 emails.Add(match.Value.ToString());
             }
+            return newTEXT;
         }
 
 
