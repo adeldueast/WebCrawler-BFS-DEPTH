@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 using HtmlAgilityPack;
 
 namespace WebCrawler
@@ -18,54 +15,51 @@ namespace WebCrawler
 
         private static Queue<Page> queue = new Queue<Page>();
         private static HashSet<Page> visitedWebsite = new HashSet<Page>();
-
-
-        static Page page_initiale = new Page("https://departement-info-cem.github.io/3N5-Prog3/testbot/index.html", 1);
-
-      
+        private static HashSet<string> emails = new HashSet<string>();
+        private static HtmlWeb web;
 
         static void Main(string[] args)
         {
 
-          
+            Directory.CreateDirectory(args[2]);
+
 
             if (args.Length != 3)
             {
-                Console.WriteLine("Veuillez entrer 3 arguments");
-                Console.WriteLine("- Une profondeur d'exploration qui doit être un nombre entier positif.");
-                Console.WriteLine("- Un URL de départ qui est la première page à explorer. Il doit s'agir d'une adresse valide (le format est correct et il y a une page qui y correspond).");
-                Console.WriteLine("- Un répertoire où écrire les copies locales des fichiers explorés..");
-
+                MessageHelp();
             }
             else
             {
                 if (!firstValidation(args[0]))
                 {
                     Console.WriteLine("Veuillez entrer un nombre entier valide en premier paramètre !");
-                  
-                    
-                    
+                    MessageHelp();
+
+
+
                 }
                 else if (!secondValidation(args[1]))
                 {
                     Console.WriteLine("Veuillez entrer un url valide !");
+                    MessageHelp();
+
 
                 }
                 else if (!thirdValidation(args[2]))
                 {
                     Console.WriteLine("Le répertoire où écrire les copies locales des fichiers explorés n'existe pas ! Veuillez le créer svp.");
+                    MessageHelp();
+
 
                 }
                 else
                 {
                     Page page_init = new Page(args[1], Int32.Parse(args[0]));
-                    discoverWeb(page_initiale);
+                    discoverWeb(page_init, args[2]);
 
                 }
 
             }
-
-           
 
 
 
@@ -73,76 +67,45 @@ namespace WebCrawler
         }
 
 
-
-        private static bool firstValidation(string depth)
+        // Main functions
+        private static void discoverWeb(Page rootURL, string Path)
         {
-
-            if (int.TryParse(depth, out _))
-            {
-                return true;
-            }
-            return false;
-
-        }
+            Page pageCourante = null;
 
 
-        private static bool secondValidation(string link)
-        {
-
-            if (Uri.IsWellFormedUriString(link, UriKind.Absolute)) return true;
-
-
-            return false;
-
-        }
-
-        private static bool thirdValidation(string path)
-        {
-          
-
-            if (Directory.Exists(path))
-            {
-                return true;
-            }
-
-            return false;
-
-        }
-
-        private static void MessageAfterValidation()
-        {
-
-            Console.WriteLine("Bonjour Adel Kouaou");
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine("Tout va bien, explorons ");
-            Console.WriteLine();
-        }
-
-        private static void discoverWeb(Page root)
-        {
-
-            MessageAfterValidation();
-
+            MessageValidation();
             try
             {
-                queue.Enqueue(root);
-                visitedWebsite.Add(root);
+                queue.Enqueue(rootURL);
+                visitedWebsite.Add(rootURL);
 
 
                 while (queue.Count > 0)
                 {
-                    Page pageCourante = queue.Dequeue();
+                    pageCourante = queue.Dequeue();
+
+                    // get the name of the file in advance. ex  https://departement-info-cem.github.io/3N5-Prog3/testbot/index.html  ==>  index.html
+                    string fileName = getNameOfFile(pageCourante);
+
+
 
                     // connect to url
-                    HtmlWeb web = new HtmlWeb();
+                    web = new HtmlWeb();
                     var htmlDoc = web.Load(pageCourante.url);
-
                     Console.WriteLine($"Exploration de  >>  {pageCourante.url}");
 
 
+                    Emails(htmlDoc.Text, emails);
+
+
+
+
+                    string full_path = ($"{Path}/{fileName}");
+                    //creer un fichier et ecrit le body du loaded seulement si le nom du fichier contient n'est pas vide. 
+                    if (fileName.Length > 0) using (StreamWriter objFichierAEcrire = new StreamWriter(full_path)) objFichierAEcrire.Write(htmlDoc.Text);
+
                     // exctract emails..
-                    ////
+
 
 
 
@@ -172,19 +135,62 @@ namespace WebCrawler
 
                 }
 
+
+
             }
             catch (Exception e)
             {
 
 
-                Console.WriteLine(e.Message);
+                Console.WriteLine($"URL mal formé {pageCourante.url}");
 
             }
+
+            MessageResult();
 
 
         }
 
+        public static void Emails(string text, HashSet<string> emails)
+        {
+            const string MatchEmailPattern =
+              @"(([\w-]+\.)+[\w-]+|([a-zA-Z]{1}|[\w-]{2,}))@"
+              + @"((([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\.([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\."
+              + @"([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\.([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])){1}|"
+              + @"([a-zA-Z]+[\w-]+\.)+[a-zA-Z]{2,4})";
 
+            Regex rx = new Regex(
+              MatchEmailPattern,
+              RegexOptions.Compiled | RegexOptions.IgnoreCase);
+
+            // Find matches.
+            MatchCollection matches = rx.Matches(text);
+
+            // Report the number of matches found.
+            int noOfMatches = matches.Count;
+
+            // Report on each match.
+            foreach (Match match in matches)
+            {
+                emails.Add(match.Value.ToString());
+            }
+        }
+
+
+        private static string getNameOfFile(Page URL)
+        {
+            string name = URL.url.Split('/')[URL.url.Split('/').Length - 1];
+            return name;
+
+
+        }
+        private static void createFile(string Path, string fileName)
+        {
+
+
+            File.Create($"{Path}/{fileName}");
+
+        }
         private static string GetAbsoluteUrlString(string baseUrl, string url)
         {
             var uri = new Uri(url, UriKind.RelativeOrAbsolute);
@@ -192,5 +198,80 @@ namespace WebCrawler
                 uri = new Uri(new Uri(baseUrl), uri);
             return uri.ToString();
         }
+
+        // validation 
+        private static bool firstValidation(string depth)
+        {
+
+            if (int.TryParse(depth, out _))
+            {
+                return true;
+            }
+            return false;
+
+        }
+
+
+        private static bool secondValidation(string link)
+        {
+
+            if (Uri.IsWellFormedUriString(link, UriKind.Absolute)) return true;
+
+
+            return false;
+
+        }
+
+        private static bool thirdValidation(string path)
+        {
+
+
+            if (Directory.Exists(path))
+            {
+                return true;
+            }
+
+            return false;
+
+        }
+
+
+        // Message
+        private static void MessageHelp()
+        {
+
+            Console.WriteLine("Veuillez entrer 3 arguments");
+            Console.WriteLine("- Une profondeur d'exploration qui doit être un nombre entier positif.");
+            Console.WriteLine("- Un URL de départ qui est la première page à explorer. Il doit s'agir d'une adresse valide (le format est correct et il y a une page qui y correspond).");
+            Console.WriteLine("- Un répertoire où écrire les copies locales des fichiers explorés..");
+        }
+        private static void MessageValidation()
+        {
+
+            Console.WriteLine("Bonjour Adel Kouaou");
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine("Tout va bien, explorons ");
+            Console.WriteLine();
+        }
+
+        private static void MessageResult()
+        {
+
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine($"Nombre de pages explorées : {visitedWebsite.Count}");
+            Console.WriteLine($"Nombre de courriels extraits (en ordre alphabétique) : {emails.Count}");
+            foreach (var email in emails)
+            {
+                Console.WriteLine($"\t{email}");
+
+            }
+
+
+
+        }
+
+
     }
 }
