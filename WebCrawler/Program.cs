@@ -18,7 +18,7 @@ namespace WebCrawler
         private static HashSet<Page> visitedWebsite = new HashSet<Page>();
 
 
-        private static HashSet<string> emails = new HashSet<string>();
+        private static List<string> emails = new List<string>();
         private static HtmlWeb web = new HtmlWeb();
 
         static void Main(string[] args)
@@ -168,7 +168,7 @@ namespace WebCrawler
 
         }
 
-        public static string Emails(string text, HashSet<string> emails)
+        public static string Emails(string text, List<string> emails)
         {
             const string MatchEmailPattern =
               @"(([\w-]+\.)+[\w-]+|([a-zA-Z]{1}|[\w-]{2,}))@"
@@ -190,7 +190,11 @@ namespace WebCrawler
             // Report on each match.
             foreach (Match match in matches)
             {
-                emails.Add(match.Value.ToString());
+                if (!emails.Contains(match.Value))
+                {
+emails.Add(match.Value.ToString());
+                }
+                
             }
             return newTEXT;
         }
@@ -276,7 +280,7 @@ namespace WebCrawler
 
         private static void MessageResult()
         {
-
+            emails.Sort();
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine($"Nombre de pages explorées : {visitedWebsite.Count}");
