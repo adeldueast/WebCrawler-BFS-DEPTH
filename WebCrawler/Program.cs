@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Net;
 using System.Text.RegularExpressions;
 using HtmlAgilityPack;
 
@@ -15,15 +16,15 @@ namespace WebCrawler
 
         private static Queue<Page> queue = new Queue<Page>();
         private static HashSet<Page> visitedWebsite = new HashSet<Page>();
+
+
         private static HashSet<string> emails = new HashSet<string>();
-        private static HtmlWeb web;
+        private static HtmlWeb web = new HtmlWeb();
 
         static void Main(string[] args)
         {
 
             Directory.CreateDirectory(args[2]);
-
-
             if (args.Length != 3)
             {
                 MessageHelp();
@@ -63,7 +64,7 @@ namespace WebCrawler
 
 
 
-            Console.ReadKey();
+            Console.Read();
         }
 
 
@@ -74,15 +75,17 @@ namespace WebCrawler
             Page pageCourante = null;
 
 
-            MessageValidation();
-            try
+
+
+
+            queue.Enqueue(rootURL);
+            visitedWebsite.Add(rootURL);
+
+            while (queue.Count > 0)
             {
-
-                queue.Enqueue(rootURL);
-                visitedWebsite.Add(rootURL);
-
-                while (queue.Count > 0)
+                try
                 {
+
                     pageCourante = queue.Dequeue();
 
                     // get the name of the file in advance. ex  https://departement-info-cem.github.io/3N5-Prog3/testbot/index.html  ==>  index.html
@@ -91,12 +94,11 @@ namespace WebCrawler
 
 
                     // connect to url
-                    web = new HtmlWeb();
                     var htmlDoc = web.Load(pageCourante.url);
                     Console.WriteLine($"Exploration de  >>  {pageCourante.url}");
 
 
-                   var textModified =  Emails(htmlDoc.Text, emails);
+                    var textModified = Emails(htmlDoc.Text, emails);
 
 
 
@@ -134,18 +136,34 @@ namespace WebCrawler
 
                 }
 
+                catch (Exception e)
+                {
 
+                    switch (e.GetType().Name)
+                    {
+
+
+                        case "WebException":Console.WriteLine($"Page inaccessible  {pageCourante.url}");
+                            visitedWebsite.Remove(pageCourante);
+                            break;
+                        case "HtmlWebException":
+                            Console.WriteLine($"URL mal formé {pageCourante.url}");
+                            visitedWebsite.Remove(pageCourante);
+
+                            break;
+                        default:
+                            break;
+                    }
+                    
+
+
+                }
 
             }
-            catch (Exception e)
-            {
 
-
-                Console.WriteLine($"URL mal formé {pageCourante.url}");
-
-            }
 
             MessageResult();
+
 
 
         }
