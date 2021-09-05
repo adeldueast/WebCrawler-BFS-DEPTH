@@ -24,9 +24,10 @@ namespace WebCrawler
         static void Main(string[] args)
         {
 
-            Directory.CreateDirectory(args[2]);
+           // Directory.CreateDirectory(args[2]);
             if (args.Length != 3)
             {
+                Console.WriteLine("Veuillez entrer 3 arguments");
                 MessageHelp();
             }
             else
@@ -114,7 +115,9 @@ namespace WebCrawler
                     if (pageCourante.depth != 0)
                     {
                         var htmlNodes = htmlDoc.DocumentNode.SelectNodes("//a[@href]");
-                        foreach (var node in htmlNodes)
+                        if (htmlNodes!=null)
+                        {
+                              foreach (var node in htmlNodes)
                         {
 
                             string href = node.Attributes["href"].Value;
@@ -130,6 +133,8 @@ namespace WebCrawler
                             }
 
                         }
+                        }
+                      
                     }
 
 
@@ -143,7 +148,8 @@ namespace WebCrawler
                     {
 
 
-                        case "WebException":Console.WriteLine($"Page inaccessible  {pageCourante.url}");
+                        case "WebException":
+                            Console.WriteLine($"Page inaccessible  {pageCourante.url}");
                             visitedWebsite.Remove(pageCourante);
                             break;
                         case "HtmlWebException":
@@ -154,7 +160,7 @@ namespace WebCrawler
                         default:
                             break;
                     }
-                    
+
 
 
                 }
@@ -192,9 +198,9 @@ namespace WebCrawler
             {
                 if (!emails.Contains(match.Value))
                 {
-emails.Add(match.Value.ToString());
+                    emails.Add(match.Value.ToString());
                 }
-                
+
             }
             return newTEXT;
         }
@@ -238,11 +244,14 @@ emails.Add(match.Value.ToString());
         private static bool secondValidation(string link)
         {
 
-            if (Uri.IsWellFormedUriString(link, UriKind.Absolute)) return true;
-
+            Uri uriResult;
+            if (Uri.TryCreate(link, UriKind.Absolute, out uriResult)
+                && (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps))
+            {
+                return true;
+            }
 
             return false;
-
         }
 
         private static bool thirdValidation(string path)
@@ -263,7 +272,7 @@ emails.Add(match.Value.ToString());
         private static void MessageHelp()
         {
 
-            Console.WriteLine("Veuillez entrer 3 arguments");
+
             Console.WriteLine("- Une profondeur d'exploration qui doit être un nombre entier positif.");
             Console.WriteLine("- Un URL de départ qui est la première page à explorer. Il doit s'agir d'une adresse valide (le format est correct et il y a une page qui y correspond).");
             Console.WriteLine("- Un répertoire où écrire les copies locales des fichiers explorés..");
