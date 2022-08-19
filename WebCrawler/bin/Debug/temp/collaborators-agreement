@@ -1,0 +1,448 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <title>June 2015 Version of Invited Expert and Collaborator Agreement - W3C</title>
+      <link rel="stylesheet" href="/2008/site/css/minimum" type="text/css" media="handheld, all" />
+      <style type="text/css" media="print, screen and (min-width: 481px)" xml:space="preserve">
+         @import url("/2008/site/css/advanced");
+         del {
+            background:#FFB4B4; 
+            text-decoration: line-through;
+         }
+         ins {
+            background:#F9FFBC;
+            text-decoration: italic;
+         }
+      </style>
+      <link href="/2008/site/css/minimum" rel="stylesheet" type="text/css" media="handheld, only screen and (max-device-width: 480px)" />
+      <meta name="viewport" content="width=device-width" />
+      <link rel="stylesheet" href="/2008/site/css/print" type="text/css" media="print" />
+      <link rel="shortcut icon" href="/2008/site/images/favicon.ico" type="image/x-icon" />
+  </head>
+  <body id="www-w3-org" class="w3c_public">
+    <div id="w3c_container">
+      <div id="w3c_mast">
+        <h1 class="logo">
+          <a tabindex="2" accesskey="1" href="/"><img src="/2008/site/images/logo-w3c-mobile-lg" width="90" height="53" alt="W3C" /></a>
+          <span class="alt-logo">W3C</span>
+        </h1>
+        <div id="w3c_nav">
+          <form action="/Help/search" method="get" enctype="application/x-www-form-urlencoded">
+            <div class="w3c_sec_nav"><!-- --></div>
+            <ul class="main_nav">
+              <li class="first-item"><a href="/standards/">Standards</a></li>
+              <li><a href="/participate/">Participate</a></li>
+              <li><a href="/Consortium/membership">Membership</a></li>
+              <li class="last-item"><a href="/Consortium/">About W3C</a></li>
+              <li class="search-item">
+                <div id="search-form">
+                  <input tabindex="3" class="text" name="q" value="" title="Search" type="text" />
+                  <button id="search-submit" name="search-submit" type="submit"><img class="submit" src="/2008/site/images/search-button" alt="Search" width="21" height="17" /></button>
+                </div>
+              </li>
+            </ul>
+          </form>
+        </div> 
+      </div> 
+      <div id="w3c_main">
+        <div id="w3c_logo_shadow" class="w3c_leftCol">
+          <img height="32" alt="" src="/2008/site/images/logo-shadow" />
+        </div>
+        <div class="w3c_leftCol">
+          <h2 class="offscreen">Site Navigation</h2>
+          <h3 class="category"><span class="ribbon"><a href="/2004/08/invexp.html" title="Up to Instructions for non-Members (Invited Experts)">Instructions for non-Members (Invited Experts) <img src="/2008/site/images/header-link" alt="Header link" width="13" height="13" class="header-link" /></a></span></h3>
+          <ul class="theme">
+            <li><a href="/participate/extcontributions.html">External Contributions</a></li>
+            <li><a class="current" href="http://www.w3.org/Consortium/Legal/collaborators-agreement">Invited Expert and Collaborator Agreement</a></li>
+          </ul>
+          <br />
+        </div>
+        <div class="w3c_mainCol">
+          <div id="w3c_crumbs">
+            <div id="w3c_crumbs_frame">
+              <ul class="bct"> <!-- .bct / Breadcrumbs -->
+                <li class="skip"><a tabindex="1" accesskey="2" title="Skip to content (e.g., when browsing via audio)" href="#w3c_content_body">Skip</a></li>
+                <li><a href="/">W3C</a> <span class="cr">»</span> </li>
+                <li><a href="/participate/">Participate</a> <span class="cr">»</span> </li>
+                <li><a href="/Consortium/activities.html">Groups</a> <span class="cr">»</span> </li>
+                <li><a href="/2004/08/invexp.html">Instructions for non-Members…</a> <span class="cr">»</span> </li> 
+                <li class="current">Invited Expert and Collaborator Agreement</li>
+             </ul>            
+          </div>
+        </div>
+      <h1 class="title">Invited Expert and Collaborator Agreement &mdash; 01 June 2015 Edition</h1>
+          <ul class="w3c_toc">
+            <li class="toc_prefix">On this page → </li>
+            <li><a href="#L83">W3C Process</a><span class="bullet"> • </span></li>
+            <li><a href="#L160">Participation cost</a><span class="bullet"> • </span></li>
+            <li><a href="#L164">Notifications</a><span class="bullet"> • </span></li>
+            <li><a href="#L172">Duration and Termination</a><span class="bullet"> • </span></li>
+            <li><a href="#L182">Assignment</a><span class="bullet"> • </span></li>
+            <li><a href="#L186">Choice of Law</a><span class="bullet"> • </span></li>
+            <li><a href="#about">About&nbsp;this&nbsp;Document</a></li>
+          </ul>
+        <div id="w3c_content_body">
+          <div class="line">
+
+            <h2 id="l831">1. Introduction</h2>
+
+            <p>W3C, as an organization, only accepts membership from
+            organizations. To be able to work with individual experts in
+            W3C Groups, W3C has a system of so called "Invited
+            Experts".</p>
+
+            <p>It is common that the Chair or the Team Contact of a
+            given W3C Group invite individual Experts to participate in
+            the W3C Group in order to improve the resulting
+            Specification and in order to allow individuals with
+            expertise in specific areas not otherwise available in these
+            Groups to participate in W3C work. As W3C is a Member
+            organization, there are limits to the number and the type of
+            people being invited in order to avoid discouraging W3C
+            Membership of organizations. </p>
+
+            <p>Invited Experts are accepted by W3C to work in a specific
+            Working Group or Interest Group.
+            Sometimes the Group is Member confidential, another Group
+            may be open to the public.</p>
+
+            <p>This document establishes the rules and legal conditions
+            for invited experts accepted by <acronym title="World Wide
+            Web Consortium">W3C</acronym>.  It governs their
+            relationship to <acronym title="World Wide Web
+            Consortium">W3C</acronym> and their participation in W3C
+            Groups. </p>
+
+            <p>Further information about the Invited expert application
+            can be found at: </p>
+
+            <ul id="ieresources" class="show_items">
+              <li><a href="/2004/08/invexp.html">Policy for Approval of Invited Experts</a></li>
+              <li><a href="/Consortium/Process/#invited-expert-wg">W3C Process Document</a></li>
+            </ul>
+            <h2 id="L83">2. W3C Process </h2>
+
+            <p>W3C develops technical Specifications called <q>Technical
+            Reports</q>.  Those <q>Technical Reports</q> are built
+            following a predefined Process that is laid down in the <a
+            href="http://www.w3.org/Consortium/Process/">W3C Process
+            Document</a>. The Invited Expert hereby recognizes that his or
+            her activities in the <acronym title="World Wide Web
+            Consortium">W3C</acronym> are guided and ruled by the then
+            current <a href="http://www.w3.org/Consortium/Process/">W3C
+            Process Document</a>.  Violation of the W3C Process is ground for
+            termination of the Invited Expert Agreement by W3C (see <a
+            href="#L172">section 5</a>.).</p>
+            
+            <p>W3C is hosted by <acronym title="Massachusetts Institute of
+              Technology">MIT</acronym>, <acronym title="European Research
+            Consortium for Informatics and Mathematics">ERCIM</acronym>,
+            Keio University and Beihang University. Contractual rights and
+            obligations out of this Agreement benefit all four Host
+            organizations. Each Host organization of W3C is entitled to
+            manage and enforce all rights out of this Agreement.</p>
+
+            <h3 id="L110">2.1 Member Access</h3>
+
+            <p>W3C may, at its discretion, grant Invited Experts access to
+            Member confidential information, generally based on the level
+            of confidentiality of meeting records and other proceedings
+            described in a group charter. This access includes
+            mailing-lists, website, tools, teleconferences and meetings.
+            W3C seeks to ensure that all Invited Experts in a given W3C
+            Group have the access necessary to enable the group to conduct
+            its work.</p>
+
+            <p>Invited Experts participating in work open to the public do
+            not have access to Member confidential information and have no
+            right to require such access unless they are also Invited
+            Experts in a W3C Group which operates in W3C Member space.
+            They accept that some of their communication may be sent to
+            Member confidential mailing lists where they do not have
+            access. If, on an exceptional basis, Invited Experts without
+            regular access to Member confidential information are invited
+            to a Member confidential meeting or participate there by
+            accident, they are bound by the Member confidentiality
+            obligations like an Invited Expert with regular Member
+            access.</p>
+
+            <h3 id="L118">2.2 Copyright</h3>
+
+            <p>Copyright is a very important part of standardization
+            activities. It allows the standards development organization
+            to maintain vendor neutral control over a specification, and
+            thus protect the consensus found within a Working Group.</p>
+
+            <p>In the course of the development of materials within the
+            W3C, Invited Experts will make contributions. Those
+            contributions will be integrated into the jointly developed
+            work thus creating shared copyright on the Invited Expert's
+            contribution. Most W3C Specifications contain a section with
+            acknowledgement of contributions. </p>
+
+            <p>The Invited Expert hereby grants to the W3C a perpetual,
+            nonexclusive, royalty-free, world-wide right and license under
+            any Invited Expert's copyrights on his or her contributions,
+            to copy, publish and distribute the contribution under 
+            a license of W3C's choosing. Additionally, the Invited Expert grants
+            a right and license of the same scope to any derivative works
+            prepared by the W3C and based on, or incorporating all or part
+            of, his or her contribution and that any derivative works of
+            this contribution prepared by the W3C shall be solely owned by
+            the W3C. Furthermore, the Invited Expert understands that W3C
+            will be able to exercise all rights as a copyright owner of
+            Invited Expert's contribution, including enforcement against
+            infringers without additional agreement or notice.</p>
+
+            <p>
+            Nothing in this agreement restricts the Invited Expert from
+            using their individual contributions as they wish, even if those have
+            later been amalgamated into joint works.
+            </p>
+
+            <p>
+            Where W3C releases materials under a permissive license such as the W3C
+            Software License or CC-BY, nothing in this agreement should be read to
+            restrict the Invited Expert from exercising the permissions granted by
+            that license.
+            </p>
+            
+            <p>The Invited Experts represent that they are legally entitled to
+            grant the above license. If their employer(s) have rights to
+            intellectual property that the Invited Expert creates that
+            includes the contributions, they represent that they have
+            received permission to make contributions on behalf of that
+            employer or that the employer has waived such rights for the
+            contributions to W3C. </p>
+
+            <h3 id="L131">2.3 Patent Policy</h3>
+
+            <p>The Invited Experts represent that they are legally
+            entitled to grant the necessary licenses for their
+            contribution as described in the <a
+            href="http://www.w3.org/Consortium/Patent-Policy/">Patent
+            Policy</a>, especially in <a
+            href="http://www.w3.org/Consortium/Patent-Policy/#sec-invited">Section
+            3.4</a> thereof. If the Invited Experts' employer(s) have rights
+            to intellectual property that the Invited Experts create that
+            includes their contributions, they represent that they have received
+            permission to make the relevant licensing commitments according to
+            the <a href="http://www.w3.org/Consortium/Patent-Policy/#title">W3C
+            Patent Policy</a> on behalf of that employer. </p>
+
+            <h3 id="L141">2.4 Decency</h3>
+
+            <p>Invited Expert will participate in the W3C Group in a
+            decent way. Invited Experts will refrain from defaming,
+            harassing or otherwise offending other participants. The
+            Invited Expert agrees to indemnify and hold W3C harmless from
+            any dispute which may arise from a breach of terms of this
+            Agreement.  The <a
+              href="http://www.w3.org/Consortium/Process/#ParticipationCriteria">Section
+            3.1 of the Process Document</a> applies. </p>
+
+            <p>The Invited Expert refrains from sending unsolicited
+            commercial messages to W3C mailing-lists and other promotional
+            activities for personal matters or for third parties. This is
+            especially required from Invited Experts sending messages to
+            public W3C Groups. </p>
+
+            <h3 id="L147">2.5 Confidentiality</h3>
+
+            <p>Invited Experts participating in Member-confidential work
+            are bound by the Member-confidentiality obligation as
+            expressed in the Member agreement as any other Participant
+            from a W3C Member organization by the W3C Member
+            confidentiality as defined in <a
+              href="http://www.w3.org/Consortium/Process/#confidentiality-levels">Section
+              7.2 of the Process Document</a>. Violation of W3C Member
+            Confidentiality is deemed a grave violation of this Agreement
+            and is ground for termination of the Invited Expert Agreement
+            by W3C (see <a href="#L172">section 5</a>.) </p>
+
+            <p>Capabilities are granted to the individual Invited Expert,
+            not the organization with which he or she may be affiliated.
+            Invited Experts should limit communications relevant to the
+            proceeding of Member activities to others bound by the member
+            or participant agreements unless a part of their role is
+            sharing selected information with the public or external
+            communities.</p>
+
+            <h3 id="L156">2.6 Use of Names</h3>
+
+            <p>Neither Invited Experts nor their employers will use the
+            name of W3C, MIT, ERCIM or KEIO without prior permission. In
+            return W3C, MIT, ERCIM or KEIO will not use the name of the
+            Participant in any form of publicity without prior permission.
+            This is often determined by the policy of the W3C Group with
+            respect to contributions to a deliverable or press release
+            attribution.</p>
+
+            <h2 id="L160">3. Participation cost</h2>
+
+            <p>The cost for participation in W3C work, including
+            telecommunication costs, travel costs and all other costs
+            incurred by the participation in W3C work will reside solely
+            with the Invited Expert. On an exceptional basis W3C may grant
+            some compensation for travel expenses and/or
+            collaboration.</p>
+
+            <h2 id="L164">4. Notifications</h2>
+            
+            <p>The Invited Expert will notify W3C of any change in
+            affiliation and other aspects relevant for this relationship.
+            This includes any possible conflicts of interest that might
+            arise. Such conflicts may arise from participation in other
+            work on standards and consulting relationships in technology
+            areas competing with the work the Expert was invited for. <a
+            href="http://www.w3.org/Consortium/Process/#coi">Section
+            3.1.1 of the W3C Process Document</a> applies. </p>
+
+            <p>Such notifications should be sent to the Team-Contact of the
+            W3C Group the Expert is invited to with cc to
+            correc@ti.con. </p>
+   
+            <p>In all notifications and communications, Invited Experts
+            will, to the best of their knowledge, convey complete and true
+            information. </p>
+
+            <h2 id="L172">5. Duration and Termination</h2>
+
+            <p>The duration of the Invited Expert's participation is
+            determined and fixed by W3C, and archived. The Participation
+            can be renewed one or more times. At the completion of the
+            Invited Expert's term, W3C will terminate the relationship and
+            remove all privileges without being obliged to give prior
+            notice.</p>
+   
+            <p>Either party may end the relationship at their discretion.
+            The relationship of the parties under this Agreement shall be
+            that of a voluntary association. This Agreement does not create
+            a partnership or joint venture.  Neither W3C, nor the
+            Participant can bind the other or create any relationship of
+            principal or agent.</p>
+
+            <p>Invited Experts are subject to the same commitment as any
+            other Member of the W3C Group they are invited to. If the
+            required commitment is not fulfilled, W3C might close accounts and end
+            privileges of any Invited Expert without prior notice. </p>
+
+            <p>Even in the event of termination of the Invited Expert
+            relationship sections <a href="#L118">2.2</a>, <a
+            href="#L131">2.3</a>, <a href="#L147">2.5</a> and <a
+            href="#L156">2.6</a> will persist. </p>
+
+            <h2 id="L182">6. Assignment</h2>
+
+            <p>As the relationship of the Invited Expert with W3C is as an
+            individual relationship, all assignments to any third party are
+            not permissible.  Assignments in violation of this clause are
+            null and void.</p>
+
+            <h2 id="L186">7. Choice of Law</h2>
+
+            <p>This Agreement shall be construed and controlled by the laws
+            of the Commonwealth of Massachusetts, USA. Further, the laws of the
+            Commonwealth of Massachusetts, USA, will govern any dispute arising
+            from the terms of this agreement or a breach of this Agreement.
+            The Invited Expert agrees to personal jurisdiction by the state
+            and federal courts sitting in the Commonwealth of Massachusetts.</p>
+   
+            <h2 id="about">8. About this Document</h2>
+            <dl>
+              <dt>This version:</dt>
+                <dd>http://www.w3.org/Consortium/Legal/2015/06-invited-expert</dd>
+              <dt>Latest version:</dt>
+                <dd><a href="http://www.w3.org/Consortium/Legal/collaborators-agreement">http://www.w3.org/Consortium/Legal/collaborators-agreement</a></dd>
+              <dt>Previous version:</dt>
+                <dd><a href="http://www.w3.org/Consortium/Legal/2015/04-invited-expert">http://www.w3.org/Consortium/Legal/2015/04-invited-expert</a></dd>
+              <dt>Editors:</dt>
+                <dd>Rigo Wenning, Legal Counsel, <a href="mailto:correc@ti.con">correc@ti.con</a></dd>
+                <dd>Coralie Mercier, Head of communications, <a href="mailto:correc@ti.con">correc@ti.con</a></dd>
+              <dt>Last Changes:</dt>
+              <dd>2015-08-12: Major update validated by W3M that removes language on not branching contributions as requested by the AB. At the same time, changed all links to the Process Document to the short link</dd>
+              <dd>2015-04-26: On AB request allowed further use of own contributions even to fragment the market. Fixed a publication issue to streamline with <a href="doc-license.html">new licensing policy</a></dd>
+	        <dd>2014-12-01: Fixes: Now says "Commonwealth" of Massachusetts instead of "State". Also fixed a broken link.</dd>
+                <dd>2014-08-01: Document adapted to the changes introduced by the change of the <a href="http://www.w3.org/2014/Process-20140801/">2014 Process Document</a></dd>
+		<dd>2018-02-01: Document adapted to the changes introduced by the change of the <a href="https://www.w3.org/2018/Process-20180201/">2018 Process Document</a></dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="w3c_footer">
+  <div id="w3c_footer-inner">
+    <h2 class="offscreen">Footer Navigation</h2>
+      <div class="w3c_footer-nav">
+        <h3>Navigation</h3>
+          <ul class="footer_top_nav">
+            <li><a href="/">Home</a></li>
+            <li><a href="/standards/">Standards</a></li>
+            <li><a href="/participate/">Participate</a></li>
+            <li><a href="/Consortium/membership">Membership</a></li>
+            <li class="last-item"><a href="/Consortium/">About W3C</a></li>
+          </ul>
+      </div>
+      <div class="w3c_footer-nav">
+        <h3>Contact W3C</h3>
+          <ul class="footer_bottom_nav">
+            <li><a href="/Consortium/contact">Contact</a> </li>
+            <li><a accesskey="0" href="/Help/">Help and FAQ</a> </li>
+            <li><a href="/Consortium/sponsor/">Sponsor / Donate</a></li>
+            <li><a href="/Consortium/siteindex">Site Map</a></li>
+            <li><address id="w3c_signature"><a href="http://lists.w3.org/Archives/Public/site-comments/">Feedback</a></address></li>
+          </ul>
+      </div>
+      <div class="w3c_footer-nav">
+        <h3>W3C Updates</h3>
+          <ul class="footer_follow_nav">
+	    <li><a href="http://twitter.com/W3C" title="Follow W3C on Twitter"><img src="/2008/site/images/Twitter_bird_logo_2012.svg" alt="Twitter" class="social-icon" height="40" /></a></li>
+          </ul>
+      </div>
+    <p class="copyright">Copyright &#xA9; 2018 W3C <sup>&#xAE;</sup> (<a href="http://www.csail.mit.edu/"><acronym title="Massachusetts Institute of Technology">MIT</acronym></a>, <a href="http://www.ercim.eu/"><acronym title="European Research Consortium for Informatics and Mathematics">ERCIM</acronym></a>, <a href="http://www.keio.ac.jp/">Keio</a>, <a href="http://ev.buaa.edu.cn/">Beihang</a>) <a href="/Consortium/Legal/ipr-notice">Usage policies apply</a>.</p>
+  </div>
+  </div>
+    <!-- Generated from data/scripts.php, ../../smarty/{scripts.tpl} --><!-- At the bottom for performance reasons -->
+    <div id="w3c_scripts">
+     <script type="text/javascript" src="/2008/site/js/main" xml:space="preserve"><!-- --></script>
+     <script type="text/javascript">
+        (
+          async function() {
+            const resources = document.querySelector("#ieresources");
+            const apikey    = "hqw8qkg239s8c84c0k88g4owk4s00kg";
+            const res1      = await fetch(`https://api.w3.org/groups/wg?apikey=${apikey}`);
+            const wgs       = await res1.json();
+            const res2      = await fetch(`https://api.w3.org/groups/ig?apikey=${apikey}`);
+            const igs       = await res2.json();
+            function sortGroups (a, b) {
+              if (a.title < b.title) return -1;
+              if (a.title > b.title) return 1;
+              return 0;
+            }
+            const t = wgs._links.groups.concat(igs._links.groups).sort(sortGroups);
+            let select = `<li>
+            <label for="group">Apply as an Invited Expert for</label>
+              <select name="group" id="group-select">
+                <option value="">Select a group</option>`;
+            t.forEach(element => {
+              select += `<option value="${element.href.replace('https://api.w3.org/groups/', '')}">${element.title}</option>`;
+            });
+            select += `</select></li>`;
+            resources.insertAdjacentHTML('beforeend', select);
+
+            const groupSelect = document.querySelector('#group-select');
+            groupSelect.addEventListener('change', e => {
+              if (groupSelect.nextSibling) {
+                groupSelect.nextSibling.remove();
+              }
+              let link = `<span>: <a href="https://www.w3.org/groups/${e.target.value}/apply-as-invited-expert">Application form for the ${e.target.options[e.target.selectedIndex].text}</a></span>`;
+              groupSelect.insertAdjacentHTML('afterend', link);
+            });
+          }
+        )();
+     </script>
+    </div>
+  </body>
+</html>

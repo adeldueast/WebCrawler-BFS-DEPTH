@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- Generated from data/head.php, ../../smarty/{head.tpl} -->
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>W3C&#xAE; Trademark and Service Mark License</title>
+
+<link rel="Help" href="/Help/" />
+<link rel="stylesheet" href="/2008/site/css/minimum" type="text/css" media="handheld, all" />
+<style type="text/css" media="print, screen and (min-width: 481px)">
+/*<![CDATA[*/
+@import url("/2008/site/css/advanced");
+/*]]>*/
+</style>
+<link href="/2008/site/css/minimum" rel="stylesheet" type="text/css" media="handheld, only screen and (max-device-width: 480px)" />
+<meta name="viewport" content="width=device-width" />
+<link rel="stylesheet" href="/2008/site/css/print" type="text/css" media="print" />
+<link rel="shortcut icon" href="/2008/site/images/favicon.ico" type="image/x-icon" />
+</head>
+<body id="www-w3-org" class="w3c_public">
+<div id="w3c_container">
+<!-- Generated from data/mast.php, ../../smarty/{mast.tpl} -->
+<div id="w3c_mast"><!-- #w3c_mast / Page top header -->
+<h1 class="logo"><a tabindex="2" accesskey="1" href="/"><img src="/2008/site/images/logo-w3c-mobile-lg" width="90" height="53" alt="W3C" /></a> <span class="alt-logo">W3C</span></h1>
+<div id="w3c_nav">
+<form action="http://www.w3.org/Help/search" method="get" enctype="application/x-www-form-urlencoded">
+<!-- w3c_sec_nav is populated through js -->
+<div class="w3c_sec_nav"><!-- --></div>
+<ul class="main_nav"><!-- Main navigation menu -->
+<li class="first-item"><a href="/standards/">Standards</a></li>
+<li><a href="/participate/">Participate</a></li>
+<li><a href="/Consortium/membership">Membership</a></li>
+<li class="last-item"><a href="/Consortium/">About W3C</a></li>
+<li class="search-item">
+<div id="search-form"><input tabindex="3" class="text" name="q" value="" title="Search" /> <button id="search-submit" name="search-submit" type="submit"><img class="submit" src="/2008/site/images/search-button" alt="Search" width="21" height="17" /></button></div>
+</li>
+</ul>
+</form>
+</div>
+</div>
+<!-- /end #w3c_mast -->
+<div id="w3c_main">
+<div id="w3c_logo_shadow" class="w3c_leftCol"><img width="100%" height="32" alt="" src="/2008/site/images/logo-shadow" /></div>
+<div class="w3c_leftCol"><h2 class="offscreen">Site Navigation</h2>
+    <h3 class="category"><span class="ribbon"><a href="/Consortium/Legal/ipr-notice.html" title="Up to Policies and Legal Information">Policies and Legal Information <img src="/2008/site/images/header-link" alt="Header link" width="13" height="13" class="header-link" /></a></span></h3>
+       <ul class="theme">
+        <li><a href="/Consortium/Legal/2008/04-testsuite-copyright.html">Licenses for W3C Test Suites</a></li>
+        <li><a href="/2004/10/27-testcases.html">Policies for Contribution of Test Cases to W3C</a></li>
+        <li><a href="/Consortium/Legal/IPR-FAQ">Intellectual Rights FAQ</a></li>
+        <li><a href="/Consortium/Legal/privacy-statement">W3C Privacy Statements</a></li>
+        <li><a href="/Consortium/Legal/copyright-documents">W3C Document License</a></li>
+        <li><a href="/Consortium/Legal/2002/trademarks-20021231.html">W3C Trademarks and Generic Terms</a></li>
+        <li><a class="current">W3C&#xAE; Trademark and Service Mark License</a></li>
+        <li><a href="/Consortium/Legal/copyright-software">W3C Software Notice and License</a></li>
+        <li><a href="/Consortium/Legal/collaborators-agreement">W3C Invited Expert and Collaborators Agreement</a></li>
+        <li><a href="/Consortium/Persistence.html">W3C URI Persistence Policy</a></li>
+        <li><a href="/1999/10/21-mirroring-policy.html">Mirroring the W3C Site</a></li>
+        <li><a href="/Consortium/Legal/2006/08-copyright-translations.html">Translations of the Copyright Notice</a></li>
+       </ul>
+       <br /></div>
+<div class="w3c_mainCol">
+<!-- Generated from data/crumbs.php, ../../smarty/{crumbs.tpl} -->
+<div id="w3c_crumbs">
+       <div id="w3c_crumbs_frame">
+        <ul class="bct"> <!-- .bct / Breadcrumbs -->
+          <li class="skip"><a tabindex="1" accesskey="2" title="Skip to content (e.g., when browsing via audio)" href="#w3c_content_body">Skip</a></li>
+          <li><a href="/">W3C</a>&#xA0;<span class="cr">&#xBB;</span>&#xA0;</li>
+          <li><a href="/Consortium/">About&#xA0;W3C</a>&#xA0;<span class="cr">&#xBB;</span>&#xA0;</li>
+          <li><a href="/Consortium/facts.html">Facts&#xA0;About&#xA0;W3C</a>&#xA0;<span class="cr">&#xBB;</span>&#xA0;</li>
+          <li><a href="/Consortium/Legal/ipr-notice.html">Policies&#xA0;and&#xA0;Legal&#xA0;Information</a>&#xA0;<span class="cr">&#xBB;</span>&#xA0;</li>
+          <li class="current">W3C&#xAE; Trademark and Service Mark License</li>
+        </ul>            
+     </div>
+    </div>
+<h1 class="title">W3C&#xAE; Trademark and Service Mark License</h1>
+<div class="w3c_toc"><!-- --></div>
+<div id="w3c_content_body">
+
+<p class="intro">The <a href="http://www.w3.org/">World Wide Web Consortium</a>'s
+(W3C<sup>&#xAE;</sup>) Hosts (<a href="http://www.lcs.mit.edu">MIT</a>, <a href="http://www.ercim.org/">ERCIM</a>, <a href="http://www.keio.ac.jp/">Keio</a>, <a href="http://ev.buaa.edu.cn/">Beihang</a>) grant you the right to use <a href="http://www.w3.org/">W3C</a> <a href="http://www.w3.org/Consortium/Legal/ipr-notice.html#W3C_Trademarks">Trademarks
+and Service Marks (collectively the "trademarks")</a>, provided that you
+agree to the following terms and conditions.</p>
+
+<h2>Terms and Conditions</h2>
+<ol class="show_items">
+  <li>The owner of <a href="http://www.w3.org">W3C</a> marks must be clearly
+    identified as the "W3C (<a href="http://www.lcs.mit.edu">MIT</a>, <a href="http://www.ercim.org/">ERCIM</a>, <a href="http://www.keio.ac.jp/">Keio</a>, <a href="http://ev.buaa.edu.cn/">Beihang</a>, <a href="http://ev.buaa.edu.cn/">Beihang</a>) ". For example,
+    "W3C<sup>&#xAE;</sup> is a trademark (registered in numerous countries) of the
+    <a href="http://www.w3.org/">World Wide Web Consortium;</a> marks of <a href="http://www.w3.org/">W3C</a> are registered and held by its host
+    institutions <a href="http://www.lcs.mit.edu">MIT</a>, <a href="http://www.ercim.org/">ERCIM,</a> <a href="http://www.keio.ac.jp/">Keio,</a> and <a href="http://ev.buaa.edu.cn/">Beihang</a>."</li>
+  <li>W3C trademarks must be used only to 
+    <ol class="show_items">
+      <li>describe or reference W3C specifications, documents, software, or
+        other products listed at the W3C web site (collectively, "W3C
+        Products"), or</li>
+      <li>describe non-W3C products that implement the required features and
+        operations of W3C Products. Required
+        features and operations are defined within specifications, often in
+        accordance with [<a href="http://www.ietf.org/rfc/rfc2119.txt">RFC2119</a>].
+        Representations that products or services comply with W3C
+        specifications must clearly indicate that the representations are
+        made by you, the licensee, and not by the W3C.</li>
+    </ol>
+  </li>
+  <li>W3C Trademarks must only be used in a way that accurately reflects the
+    STATUS associated with the W3C products. The STATUS of a W3C document
+    describes the context in which the product was developed including the
+    publication date, intellectual property disclosures (e.g., copyright or
+    patent terms), location (URI), its publication level (Note, Working
+    Draft, Candidate Recommendation, Proposed Recommendation,
+    Recommendation), and future expectations regarding the W3C Product.</li>
+  <li>Marks may not be used to indicate any kind of endorsement by the W3C,
+    official status with respect to the W3C, or any kind of relationship with
+    the W3C aside from a representation that the above requirements (1-3)
+    have been met.</li>
+  <li>W3C will audit the use of the W3C trademarks to determine compliance
+    with these terms and conditions.</li>
+  <li>IN NO EVENT SHALL THE W3C, MIT, ERCIM, KEIO, BEIHANG OR ANY TRUSTEES, DIRECTORS,
+    OFFICERS OR EMPLOYEES BE LIABLE FOR INCIDENTAL OR CONSEQUENTIAL DAMAGES
+    OF ANY KIND ARISING FROM OR RELATED TO USE OF W3C TRADEMARKS, INCLUDING
+    ECONOMIC DAMAGES AND LOST PROFITS, REGARDLESS OF WHETHER W3C (MIT, ERCIM,
+    KEIO, BEIHANG) SHALL BE ADVISED, SHALL HAVE OTHER REASON TO KNOW, OR IN FACT SHALL
+    KNOW OF THE POSSIBILITY OF THE FOREGOING.</li>
+</ol>
+
+<p>No right to create modifications or derivatives of W3C Trademarks is
+granted pursuant to this license.</p>
+
+<p><strong>Note:</strong> Certain W3C trademarks or icons may have additional
+information about their use not found within this license. Please refer to
+"<a href="../logo-usage-20000308">W3C Logo and Icon Usage</a>." Questions
+about this license should be sent to <a href="mailto:correc@ti.con">correc@ti.con</a>.</p>
+
+<h2>References</h2>
+<dl>
+  <dt>[<a href="http://www.ietf.org/rfc/rfc2119.txt">RFC2119</a>]</dt>
+    <dd>S. Bradner. <em>RFC2119: Key words for use in RFCs to Indicate
+      Requirement Levels.</em>IETF Network Working Group. BCP: 14 March
+      1997. Category: Best Current Practice</dd>
+  <dt></dt>
+</dl>
+
+</div>
+</div>
+</div>
+</div>
+<!-- Generated from data/footer.php, ../../smarty/{footer-block.tpl} -->
+<div id="w3c_footer">
+<div id="w3c_footer-inner">
+<h2 class="offscreen">Footer Navigation</h2>
+<div class="w3c_footer-nav">
+<h3>Navigation</h3>
+<ul class="footer_top_nav">
+<li><a href="/">Home</a></li>
+<li><a href="/standards/">Standards</a></li>
+<li><a href="/participate/">Participate</a></li>
+<li><a href="/Consortium/membership">Membership</a></li>
+<li class="last-item"><a href="/Consortium/">About W3C</a></li>
+</ul>
+</div>
+<div class="w3c_footer-nav">
+<h3>Contact W3C</h3>
+<ul class="footer_bottom_nav">
+<li><a href="/Consortium/contact">Contact</a></li>
+<li><a accesskey="0" href="/Help/">Help and FAQ</a></li>
+<li><a href="/Consortium/sponsor/">Sponsor / Donate</a></li>
+<li><a href="/Consortium/siteindex">Site Map</a></li>
+<li>
+<address id="w3c_signature"><a href="http://lists.w3.org/Archives/Public/site-comments/">Feedback</a></address>
+</li>
+</ul>
+</div>
+<div class="w3c_footer-nav">
+<h3>W3C Updates</h3>
+<ul class="footer_follow_nav">
+<li><a href="http://twitter.com/W3C" title="Follow W3C on Twitter"><img src="/2008/site/images/Twitter_bird_logo_2012.svg" alt="Twitter" class="social-icon" height="40" /></a>
+</li>
+</ul>
+</div>
+<!-- #footer address / page signature -->
+<p class="copyright">Copyright &#xA9; 2018 W3C <sup>&#xAE;</sup> (<a href="http://www.csail.mit.edu/"><acronym title="Massachusetts Institute of Technology">MIT</acronym></a>, <a href="http://www.ercim.org/"><acronym title="European Research Consortium for Informatics and Mathematics">ERCIM</acronym></a>,
+<a href="http://www.keio.ac.jp/">Keio</a>, <a href="http://ev.buaa.edu.cn/">Beihang</a>, <a href="http://ev.buaa.edu.cn/">Beihang</a>) <a href="/Consortium/Legal/ipr-notice">Usage policies
+apply</a>.</p>
+</div>
+</div>
+<!-- /end #footer -->
+<!-- Generated from data/scripts.php, ../../smarty/{scripts.tpl} -->
+<div id="w3c_scripts"><script type="text/javascript" src="/2008/site/js/main"><![CDATA[
+//
+<!-- -->
+//
+]]></script></div>
+</body>
+</html>

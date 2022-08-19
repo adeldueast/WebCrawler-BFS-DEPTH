@@ -17,14 +17,15 @@ namespace WebCrawler
         private static Queue<Page> queue = new Queue<Page>();
         private static HashSet<Page> visitedWebsite = new HashSet<Page>();
 
-
         private static List<string> emails = new List<string>();
         private static HtmlWeb web = new HtmlWeb();
 
         static void Main(string[] args)
         {
 
-           // Directory.CreateDirectory(args[2]);
+
+            //TODO: Make a function to execute all follow verification to make the code cleaner.
+            // Directory.CreateDirectory(args[2]);
             if (args.Length != 3)
             {
                 Console.WriteLine("Veuillez entrer 3 arguments");
@@ -56,8 +57,9 @@ namespace WebCrawler
                 }
                 else
                 {
-                    Page page_init = new Page(args[1], Int32.Parse(args[0]));
-                    discoverWeb(page_init, args[2]);
+                    MessageValidation();
+                    Page intialPage = new Page(args[1], Int32.Parse(args[0]));
+                    discoverWeb(intialPage, args[2]);
 
                 }
 
@@ -73,9 +75,7 @@ namespace WebCrawler
         // Main functions
         private static void discoverWeb(Page rootURL, string Path)
         {
-            Page pageCourante = null;
-
-
+            Page currentePage = null;
 
 
 
@@ -87,54 +87,57 @@ namespace WebCrawler
                 try
                 {
 
-                    pageCourante = queue.Dequeue();
+                    currentePage = queue.Dequeue();
 
                     // get the name of the file in advance. ex  https://departement-info-cem.github.io/3N5-Prog3/testbot/index.html  ==>  index.html
-                    string fileName = getNameOfFile(pageCourante);
+                    string fileName = getNameOfFile(currentePage);
 
 
 
                     // connect to url
-                    var htmlDoc = web.Load(pageCourante.url);
-                    Console.WriteLine($"Exploration de  >>  {pageCourante.url}");
+                    var htmlDoc = web.Load(currentePage.url);
+                    Console.WriteLine($"Exploration de  >>  {currentePage.url}");
 
 
-                    var textModified = Emails(htmlDoc.Text, emails);
+                    // exctract emails of given html body , replace all emails by correc@ti.con 
+                    // and return that new modified html body text with email replaced by correc@ti.con
+                    // to indcate that email was found at that place
+                    var textModified = ExtractAndReplaceEmailsInText(htmlDoc.Text, emails);
 
 
 
 
+                    //creer un fichier et ecrit le body du loaded seulement si le nom du fichier  n'est pas vide. 
+                    //create a file and writes the loaded body only if name of the filename isnt empty ( could use stringIsNullOrEmpty(fileName)
                     string full_path = ($"{Path}/{fileName}");
-                    //creer un fichier et ecrit le body du loaded seulement si le nom du fichier contient n'est pas vide. 
-                    if (fileName.Length > 0) using (StreamWriter objFichierAEcrire = new StreamWriter(full_path)) objFichierAEcrire.Write(textModified);
+                    if (!string.IsNullOrEmpty(fileName)) using (StreamWriter objFichierAEcrire = new StreamWriter(full_path)) objFichierAEcrire.Write(textModified);
 
-                    // exctract emails..
 
 
                     // extract absolute links
-                    if (pageCourante.depth != 0)
+                    if (currentePage.depth != 0)
                     {
                         var htmlNodes = htmlDoc.DocumentNode.SelectNodes("//a[@href]");
-                        if (htmlNodes!=null)
+                        if (htmlNodes != null)
                         {
-                              foreach (var node in htmlNodes)
-                        {
-
-                            string href = node.Attributes["href"].Value;
-                            string absURL = GetAbsoluteUrlString(pageCourante.url, href);
-                            Page new_lien = new Page(absURL, pageCourante.depth - 1);
-
-
-                            // only add if never visited
-                            if (!visitedWebsite.Contains(new_lien))
+                            foreach (var node in htmlNodes)
                             {
-                                visitedWebsite.Add(new_lien);
-                                queue.Enqueue(new_lien);
-                            }
 
+                                string href = node.Attributes["href"].Value;
+                                string absURL = GetAbsoluteUrlString(currentePage.url, href);
+                                Page newPage = new Page(absURL, currentePage.depth - 1);
+
+
+                                // only add if never visited
+                                if (!visitedWebsite.Contains(newPage))
+                                {
+                                    visitedWebsite.Add(newPage);
+                                    queue.Enqueue(newPage);
+                                }
+
+                            }
                         }
-                        }
-                      
+
                     }
 
 
@@ -149,13 +152,14 @@ namespace WebCrawler
 
 
                         case "WebException":
-                            Console.WriteLine($"Page inaccessible  {pageCourante.url}");
-                            visitedWebsite.Remove(pageCourante);
+                            //Unaccessible page
+                            Console.WriteLine($"Page inaccessible  {currentePage.url}");
+                            visitedWebsite.Remove(currentePage);
                             break;
                         case "HtmlWebException":
-                            Console.WriteLine($"URL mal formé {pageCourante.url}");
-                            visitedWebsite.Remove(pageCourante);
-
+                            //Mal formed URL
+                            Console.WriteLine($"URL mal formé {currentePage.url}");
+                            visitedWebsite.Remove(currentePage);
                             break;
                         default:
                             break;
@@ -174,7 +178,7 @@ namespace WebCrawler
 
         }
 
-        public static string Emails(string text, List<string> emails)
+        public static string ExtractAndReplaceEmailsInText(string text, List<string> emails)
         {
             const string MatchEmailPattern =
               @"(([\w-]+\.)+[\w-]+|([a-zA-Z]{1}|[\w-]{2,}))@"
@@ -211,13 +215,6 @@ namespace WebCrawler
             string name = URL.url.Split('/')[URL.url.Split('/').Length - 1];
             return name;
 
-
-        }
-        private static void createFile(string Path, string fileName)
-        {
-
-
-            File.Create($"{Path}/{fileName}");
 
         }
         private static string GetAbsoluteUrlString(string baseUrl, string url)
@@ -292,7 +289,9 @@ namespace WebCrawler
             emails.Sort();
             Console.WriteLine();
             Console.WriteLine();
+            //Number of explored pages
             Console.WriteLine($"Nombre de pages explorées : {visitedWebsite.Count}");
+            //Number of extracted emails (ordered asc)
             Console.WriteLine($"Nombre de courriels extraits (en ordre alphabétique) : {emails.Count}");
             foreach (var email in emails)
             {

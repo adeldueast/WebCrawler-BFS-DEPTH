@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <!-- Changed by: $Id: pressrelease-w3c-le.html.en,v 1.8 2022/06/28 18:39:39 coralie Exp $ -->
+    <title>W3C Media Advisory: W3C to become a public-interest non-profit organization</title>
+    <link href="//www.w3.org/StyleSheets/press.css" rel="stylesheet" type="text/css">
+    <style>
+      .info { letter-spacing: .25em; margin-left: 1em; font-variant: small-caps; opacity: .7}
+      blockquote { margin-left: 0}
+      .nav { text-align: center; }
+      #below { font-style: italic; font-size: 1.2em;}
+      .logo {float: right; margin-left: 1em;}
+    </style>
+  </head>
+  <body>
+    <p><a href="https://www.w3.org/"><img alt="W3C" src="https://www.w3.org/Icons/w3c_home"
+          height="48"
+          width="72"></a>
+      <span class="info">Media Advisory&nbsp;</span>
+      <span class="info">For immediate release</span>
+
+ </p>
+    <h1>W3C to become a public-interest non-profit organization</h1>
+    <h2>By incorporating, W3C is replacing its original Hosted model and boosting its crucial web standards work</h2>
+    <hr>
+    <div class="menu"><a href="/Press/Releases-2022#w3c-le">Translations</a>
+      | <a href="/Press/">W3C Press Release Archive</a>
+    </div>
+    <hr>
+    <p id="desc"><a href="/">https://www.w3.org/</a> &#8212; 28 June 2022 &#8212; The World Wide Web Consortium is set to pursue 501(c)(3) non-profit status. The launch as a new legal entity in January 2023 preserves the core mission of the Consortium to shepherd the web by developing open standards with contributions from W3C Members, staff, and the international community.</p>
+    <p><i>&quot;We designed the W3C legal entity in a way that keeps our core unchanged,&quot;</i> said Dr. Jeff Jaffe, W3C CEO. <i>&quot;Our values-driven work remains anchored in the royalty-free W3C Patent Policy, and the W3C Process Document where we enshrined dedication to security, privacy, internationalization and web accessibility. W3C and its Members will continue to play a fundamental role in making the web work for billions of people.&quot;</i></p>
+
+    <h3 id="history">Understanding the historical Hosted model</h3>
+    <p>When Web inventor Tim Berners-Lee founded W3C in 1994, he created a community of peers. Web technologies were already moving so quickly that it was critical to assemble a single organization to coordinate web standards. Tim accepted the offer from MIT, who had experience with consortia, to host W3C. He required from the start that W3C have a global footprint.</p>
+    <p>Within a few years, MIT (USA), Keio University (Japan), Inria (France, transitioning to ERCIM in 2003) completed agreements to provide W3C legal hosting. We added in 2013  Beihang University (China). The four partnered administratively in a Hosted model to manage W3C Members and provide employment of the global W3C staff working under the direction of W3C’s management.</p>
+    <p>At the operational level, which is not changing, W3C Members are bound together for our technical work, united around the W3C’s mission to lead the web to its full potential by creating open standards that ensure that the web remains open, accessible, internationalized, secure, and interoperable for everyone around the globe.</p>
+
+    <h3 id="experience">Building on 28 years of expertise</h3>
+    <p>Under the Hosted model we were able to make significant changes for the better: launched free and public Community Groups for pre-standardization, improved our process and patent policy, liberalized our document license, adopted living Recommendations, broadened our focus to industry, established liaisons with <abbr title="Internet Engineering Task Force">IETF</abbr>, <abbr title="Web Hypertext Application Technology Working Group">WHATWG</abbr>, <abbr title="International Standards Organization">ISO</abbr>.</p>
+    <p>The Web Consortium has a track record of delivering globally recognized standards, including the foundational HTML and CSS upon which the web is built. The social and economic value of what W3C and its Members have produced cannot be overstated: hundreds of open standards have powered the creation of 2 billion websites, the emergence of transformative phenomena like social media, e-commerce, video on the web, videoconferencing. W3C’s work enables people with disabilities to access the web, supports websites in languages all around the world, improves web security through strong authentication. W3C standards may be used by anyone, at no cost.</p>
+    <p>Yet, there are imperatives to elevate W3C to a level where it rises up stronger.</p>
+
+    <h3 id="need-for-change">Greater means, stronger governance are fueling the need for change</h3>
+    <p>We need a structure where we meet at a faster pace the demands of new web capabilities and address the urgent problems of the web. The W3C Team is small, bounded in size, and the Hosted model hinders rapid development and acquisition of skills in new fields.</p>
+    <p>We need to put governance at the center of the new organization to achieve clearer reporting, accountability, greater diversity and strategic direction, better global coordination. A Board of Directors will be elected with W3C Member majority. It will include seats that reflect the multi-stakeholder goals of the Web Consortium. We anticipate to continue joint work with today’s Hosts in a mutually beneficial partnership.</p>
+
+    <h3 id="standards-process">Preserving our world-class standards development process</h3>
+    <p>As important as all these points are, they only represent a change to the shell around W3C. The proven standards development process must and will be preserved.</p>
+    <p>W3C processes promote fairness, enable progress. Our standards work will still be accomplished in the open, under the W3C Process Document and royalty-free W3C Patent Policy, with input from the broader community. Decisions will still be taken by consensus. Technical direction and Recommendations will continue to require review by W3C Members – large and small. The Advisory Board will still guide the community-driven Process Document enhancement. The Technical Architecture Group will continue as the highest authority on technical matters.</p>
+
+    <h3 id="next-steps">Next steps</h3>
+    <p>Our transition to launch the legal entity includes concrete stages – adoption of Bylaws: filing for 501(c)(3) non-profit status; election and seating of a Board of Directors – all to transfer staff, Member contracts, and operations to the new structure.</p>
+    <p>As W3C was created to address the needs of the early web, our evolution to a public-interest non-profit is not just to continue our community effort, but to mature and grow to meet the needs of the web of the future.</p>
+    
+    <h2>About the World Wide Web Consortium</h2>
+
+    <p>The mission of the World Wide Web Consortium (W3C) is to lead
+    the Web to its full potential by creating technical standards and
+    guidelines to ensure that the Web remains open, accessible, and
+    interoperable for everyone around the globe. W3C well-known
+    standards HTML and CSS are the foundational technologies upon
+    which websites are built. W3C works on ensuring that all
+    foundational Web technologies meet the needs of civil society, in
+    areas such as accessibility, internationalization, security, and
+    privacy. W3C also provides the standards that undergird the
+    infrastructure for modern businesses leveraging the Web, in areas
+    such as entertainment, communications, digital publishing, and
+    financial services. That work is created in the open, provided for
+    free and under the groundbreaking W3C Patent Policy.</p>
+
+    <p>W3C's vision for &quot;One Web&quot; brings together thousands of
+    dedicated technologists representing more than
+    400 <a href="/Consortium/Member/List">Member organizations</a> and
+    dozens of industry sectors. W3C is jointly hosted by
+    the <a href="https://www.csail.mit.edu/">MIT Computer Science and
+    Artificial Intelligence Laboratory</a> (MIT CSAIL) in the United
+    States, the <a href="https://www.ercim.eu/">European Research
+    Consortium for Informatics and Mathematics</a> (ERCIM)
+    headquartered in France, <a href="https://www.keio.ac.jp/">Keio
+    University</a> in Japan
+    and <a href="https://ev.buaa.edu.cn/">Beihang University</a> in
+    China. For more information
+    see <a href="https://www.w3.org/">https://www.w3.org/</a>.</p>
+
+    <p><em>End Media Advisory</em></p>
+
+    <h2>Media Contact</h2>
+    <p>Amy van der Hiel, W3C Media Relations Coordinator &lt;<a href="mailto:correc@ti.con">correc@ti.con</a>&gt;
+      <br> +1.617.253.5628 (US, Eastern Time)</p>
+    <hr>
+    <div class="menu"><a href="/Press/Releases-2022#w3c-le">Translations</a>
+      | <a href="/Press/">W3C Press Release Archive</a>
+    </div>
+  </body>
+</html>
+

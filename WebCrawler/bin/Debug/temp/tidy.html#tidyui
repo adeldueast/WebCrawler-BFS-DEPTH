@@ -1,0 +1,338 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Charlie's Tidy Add-ons</title>
+<meta http-equiv="Content-Type" content="text/xhtml; charset='us-ascii'" />
+<link rel="stylesheet" type="text/css" href="tidy.site.css" />
+<style type="text/css">
+body {
+  background-color: #FFF8DC;
+}
+img {
+  border: none;
+}
+</style>
+</head>
+<body>
+<h1 id="top">Charlie's Tidy Add-Ons</h1>
+
+<p>By Charles Reitzel<br />
+Please send bug reports or comments to <a
+href="mailto:correc@ti.con?Subject=Tidy%20Add-ons"><code>correc@ti.con</code></a></p>
+
+<p>This is a brief page showing a couple additions to Tidy I have
+written.</p>
+
+<p><em>Latest: 20 February, 2003</em>, Exposed TidyOutputBOM option to
+TidyATL (and thru to Tidy.NET) and speeded up syntax highlighting.  
+Removed DLL build, which is now included in TidyLib proper.</p>
+
+<p><em>3 February, 2003</em>, Added required DLL to tidyui.zip</p>
+
+<p><em>1 February, 2003</em>, Removed stuff that you can now get
+from the <a href="http://tidy.sourceforge.net/">Tidy Project Page</a>.
+Added .NET wrapper and syntax highlighting and other goodies to Tidy UI.</p>
+
+<p><strong><em>Enjoy!</em></strong></p>
+
+<h2>Table Of Contents</h2>
+
+<p>The following are current as of <em>20 February, 2003</em>:</p>
+
+<ul>
+  <li><a href="tidy/tidyui.zip">Tidy UI</a>
+      <a href="#tidyui">More Info</a></li>
+
+  <li><a href="tidy/tidyx.h">C++ Wrapper</a>
+      <a href="#cplusplus">More Info</a></li>
+
+  <li><a href="tidy/tidyperl.tar">Perl Wrapper</a>
+      <a href="#tidyperl">More Info</a></li>
+
+  <li><a href="tidy/TidyATL.zip">COM/ATL Wrapper</a>
+      <a href="#comatl">More Info</a></li>
+
+  <li><a href="tidy/Tidy.NET.zip">.NET Wrapper</a>
+      <a href="#dotnet">More Info</a></li>
+</ul>
+
+<h2 id="tidyui">Tidy UI</h2>
+
+<p>This is a windows executable that puts up a GUI
+for the HTML Tidy library.</p>
+
+<p><a href="tidy/tidyui.zip">Download Tidy UI</a></p>
+
+<div style="text-align: left"><a href="tidy/tidyui.jpg"><img 
+       alt="Tidy UI Screen Shot" src="tidy/tidyui.thumb.jpg"/><br />
+       Screen Shot</a></div>
+
+<h3>Updates</h3>
+
+<p><em>20 February, 2003</em>, Gave syntax highlighting a decent
+performance bump.  Should only be noticeable on large files (>100KB).
+Thanks to Ken Wagnitz for nudging me on this one.</p>
+
+<p><em>3 February, 2003</em>, Added required DLL (RWUXThemeS.dll) to tidyui.zip.
+Just place it in the same directory as tidyui.exe.</p>
+
+<p><em>1 February, 2003</em>: Added syntax highlighting, Search/Replace 
+and Copy/Cut/Paste hot keys (Ctrl-C, Ctrl-X and Ctrl-V, respectively).  
+Also, misc bug fixes.</p>
+
+<p><em>28 October, 2002</em>: Fix File Save problem reported by Hakon Haugnes.</p>
+
+<p><em>15 October, 2002</em>: Mostly fixes to various library bugs 
+that affect all bindings.</p>
+
+<p><em>13 August, 2002</em>: Fixes to problems with 
+recent pretty print updates.  Avoid mangling whitespace for
+normal nodes.</p>
+
+<p><em>9 August, 2002</em>: Mostly incorporating
+TidyLib fixes and improvements.  Plus, fixing a few bits
+of UI cruft. I am hoping this is a stable version.</p>
+
+<p><em>28 July, 2002</em>: Added edit for DOCTYPE 
+option and view for Tidy messages.  Double-click on a message
+and the location in the Original source will be selected.
+As before, you can now create/open/save/save as both HTML 
+and Tidy configuration files.  Also, Tidy configuration 
+editing is, hopefully, fairly intuitive.</p>
+
+<p>One nice feature is if you hit the help button in the config
+pane, it brings up the Tidy Quick Reference on that item.</p>
+
+<p>Also, you can preview your input or the tidied HTML in the browser.
+There is also a button to replace your input with Tidy's
+output.</p>
+
+<h3>To Do List</h3>
+<ul>
+<li>Extend file filters to include *.htm, *.xhtml, *.xml</li>
+<li>Save pane size settings on exit</li>
+<li>Visually differentiate read-only options</li>
+<li>Visually differentiate edited-but-not-saved options</li>
+<li>Add sort capabilities to messages (by line, level, text)</li>
+<li>Visually differentiate errors vs. warnings vs. info (icons?)</li>
+</ul>
+ 
+<h3>Fixed Bugs</h3>
+<ul>
+<li>Add Edit->Select All menu option (to match context menu)</li>
+<li>Allow Edit|Copy and Edit|Select All in Tidy pane</li>
+<li>Support copy/paste hot keys (Ctrl-C, Ctrl-V) in Source/Tidy windows</li>
+<li>Does not reset options to default before opening new config file</li>
+<li>Does not honor add-xml-decl: no</li>
+<li>Message pane not visible at startup for some users</li>
+<li>Button text too big for some users</li>
+<li>File Save, Save As problems</li>
+</ul>
+ 
+<h3>Done List</h3>
+<ul>
+<li>Add *.* file filter for opening .cfg or .txt config files</li>
+</ul>
+ 
+<p>Many thanks to Jelks Cabaniss for testing TidyUI</p>
+
+<h2>Language Bindings</h2>
+
+<p>I have been exploring various language bindings for the HTML
+Tidy library.</p>
+
+<h3 id="cplusplus">C++</h3>
+
+<p>The first thing I did was to make a C++ wrapper for Tidy. It's
+pure syntax sugar!<sup>tm</sup></p>
+
+<p>Have a <a href="tidy/tidyx.h">look</a>.</p>
+
+<p>The C++ wrapper adds no data members and, for things like nodes 
+and attributes, the objects never actually get created.  Instead, the
+C opaque types simply get cast to objects of the appropriate class. 
+Use of callbacks for I/O and error handling is simplified by transforming
+these calls to virtual methods.  The upshot is you get the cleaner syntax
+and self-cleanup of C++ with no, or very little, added overhead.</p>
+
+<h3>SWIG</h3>
+
+<p>The next thing I did was run it through <a href=
+"http://www.swig.org">SWIG</a>. Which is an amazing tool for generating
+language bindings to C libraries.  The generated code does a great
+job of capturing the C++ object model in the respective languages.</p>
+
+<p>Mostly, SWIG just reads the C++ header
+and generates the appropriate Perl/Java/Python classes and,
+importantly, all of the environment specific glue/wrapper code to
+call into Tidy from each scripting langage.</p>
+
+<p>An update on SWIG is that implementing virtual overrides in the 
+script language is, understandably, not straight-forward and 
+script language dependent.</p>
+
+<h4 id="tidyperl">HTML::Tidy</h4>
+
+<p>Here is a working <a href="tidy/tidyperl.tar">Perl Wrapper</a>.  It
+uses the normal Perl extension type of build/install arrangement.  See 
+the readme.txt file.  I used a tar to distribute as this is readable
+on all platforms (winZip will handle it fine).</p>
+
+<p>First have a look at the SWIG <a href="tidy/tidy.i">module
+definition file</a>. The first thing you'll notice is how small and
+simple it is.  The only complication is to make Tidy::Buffer objects
+appear as strings in Perl.</p>
+
+<p>Note, the HTML::Tidy Perl extension itself is a combination of a shared
+library (.DLL) and thin Perl wrapper classes (Tidy.pm).  TidyLib is 
+linked statically, however.  The upside is that DLL hell is avoided.  
+The downside is that, when you update Tidy, you must also update your
+Perl wrapper separately (which you probably would have had to do anyway).</p>
+
+<p>I am currently researching how to implement I/O virtual calls in Perl.
+ Once the mechanism is in place, it should be possible to parse URLs
+via LWP, for example.</p>
+
+<p>Current version adds support for Tidy option constants and SaveString(),
+ which returns the document into a perl string variable.</p>
+
+<p><em>20 February, 2003</em>, New build to use latest TidyLib.</p>
+
+<p><em>24 November, 2002</em>, fixed line endings in Unix version of
+build.sh and Makefile.PL.unix.  Now I have a Linux system set up to
+test these on.</p>
+
+<h4 id="tidypython">Python?</h4>
+<h4 id="tidyjava">Java?</h4>
+
+<h3 id="comatl">COM/ATL</h3>
+
+<p>The latest is a simple COM/ATL <a href="tidy/TidyATL.zip">wrapper</a> for
+the library.  The simple operations are supported: parse file, parse from memory,
+cleanup, diagnostics, save file and save to memory.  You can also set options in
+the usual ways.  I got just a bit fancy and supported the I/O and error
+handling callbacks.  Also, TidyLib fixes for Unicode/UTF-16 are included.</p>
+
+<p><em>20 February, 2003</em>: Fixed TidyOptionId enum so that all the 
+conditionally compiled options are included, especially TidyOutputBOM.  
+Note, for XHTML/XML output, the BOM is required.  However, if you set 
+TidyOutputBOM false <em>after</em> the parse, then it will be respected.</p>
+
+<p><em>1 February, 2003</em>: Some IDL updates, but no interface/UUID 
+changes.  IDL changes are purely for the benefit of generating the 
+<a href="#dotnet">.NET wrapper</a>.</p>
+
+<p>Previous fix for character conversion in ATL wrapper now works fine
+with UTF16 due to fixes in core library.  Thanks to Moshe Plotkin for identifying
+problem and testing updates.  Parse/Save String worked OK only if current code 
+page and desired encoding match.  Now, the "String" methods temporarily force the
+encoding to UTF16LE to work with COM/OLE Unicode strings.  Didn't break the test 
+on my Latin1 system.  Feedback <em>still</em> appreciated on non-Western European
+ systems/content.</p>
+
+<p>There is an example of redirecting Tidy output to a
+static control in the VB test driver.  Note, this is still
+a rough draft.  If there is demand, it may flesh out a bit.</p>
+
+<h3 id="dotnet">.NET</h3>
+
+<p>You can download a pre-generated .NET wrapper
+<a href="tidy/Tidy.NET.zip">here</a>.</p>
+
+<p><em>20 February, 2003</em>: Regenerated to use latest TidyATL.</p>
+
+<p>I have also been examining how to call Tidy from .NET.  So far,
+there are 3 different options.  Which is best depends, as always,
+on your requirements.</p>
+
+<h4>Quick and Dirty</h4>
+
+<p>With a few simple declarations, you can call directly into 
+a DLL build of TidyLib.  See a simple <a href="tidy/TestTidy.NET.vb">example
+VB.NET program</a> sent to me by Phil Weber.</p>
+
+<h4>Full Boat</h4>
+
+<p>The <em>right</em> way to do it is probably to write a C# class that
+wraps the DLL build of TidyLib.  I tried valiantly to make my C++ wrapper
+do dual duty as a regular C++ class and, with a few judicious macro 
+definitions, a <em>Managed C++</em> class.  No joy.  Managed C++ is 
+simply too different from real C++ to be useful, imo.  Or, as I like to say, 
+<q>Managed C++ is neither.</q>  Better to write a new C# class from scratch
+- much like the TidyATL implementation.</p>
+  
+<p>Apparently, this is primarily a matter of mangling the declarations
+so that the .NET runtime will marshall the internal Unicode strings to
+"Ansi" (i.e. MBCS) used by the DLL.  There are still interop issues
+to be addressed.  Predictably, things get complicated when calling
+out to .NET I/O implementation or report filters.  You can get there
+from here by using a helper function to marshall delegate objects to
+function pointers and assigning them within native C code.  Arrangements 
+must also be made to keep those delegate objects around for the 
+lifetime of the encapsulating I/O object.</p>
+
+<p>Richard Cook has reported that he has got a working version. 
+I'll update this page with a link when I hear he has gone
+public, so to speak.</p>
+
+<h4>Goldilocks</h4>
+
+<p>As in, "just right", for my taste anyway.  Basically, using the
+.NET/COM interop layer with TidyATL seems to work well and provide
+fairly complete functionality.  TidyATL is itself fairly stable at
+this point and the COM interop seems to be a fairly predictable and
+stable bridge into the .NET CLR (Common Language Runtime).</p>
+
+<p>To get up and running, follow these steps, courtesy of
+Matthew Stanfield.  Matt is the one who first told me about this
+approach and how to go about it.  Have a <a 
+href="http://www.mattstan.pwp.blueyonder.co.uk/tidy/tidycs.html">look</a>,
+for comparison</p>
+
+<dl>
+  <dt>Register <a href="#comatl">Tidy ATL</a> on your system.</dt>
+  <dd><p><code>regsvr /c TidyATL.dll</code></p></dd>
+
+  <dt>Generate the .NET wrapper</dt>
+  <dd><p><code>TlbImp [\path\to\]TidyATL.dll /out:Tidy.dll</code></p>
+  <p>The TidyATL inferface (IDL) file has been tweaked to 
+  place the resulting assembly in the "Tidy" namespace.  The
+  results, however, are uneven.  This means that the basic
+  document object is correct: Tidy.Document.  Other types, 
+  notably the enumerations, still have their longer C names. 
+  E.g. TidyOptionId.TidyCharEncoding, etc.  Note, it is necessary
+  for the DLL to be named "Tidy.DLL" to keep everything in the
+  right namespace.</p>
+  </dd>
+
+  <dt>You can view the resulting assembly</dt>
+  <dd><p><code>IlDasm Tidy.dll</code></p></dd>
+
+  <dt>Call Tidy</dt>
+  <dd><p>To use Tidy.NET, you must first add the line.</p>
+  <pre>
+using Tidy;
+  </pre>
+  <p>See the test program for an example of creating a
+  <code>Tidy.Document</code> object and calling its
+  methods.</p>
+  </dd>
+
+  <dt>Compile Your Program</dt>
+  <dd><p><code>csc /o+ /out:TestTidy.exe /r:Tidy.dll TestTidy\TestIt.cs</code></p>
+  </dd>
+
+  <dt>Deployment</dt>
+  <dd><p>This is less clear to me.  I believe you need to place Tidy.NET.dll
+  in the .NET equivalent of the Java CLASSPATH, most likely in the
+  appropriate subdirectory: $CLASSPATH/Tidy.</p> 
+  </dd>
+</dl>   
+
+<p><a href="http://validator.w3.org/check/referer"><img
+src="http://www.w3.org/Icons/valid-xhtml10"
+alt="Valid XHTML 1.0!" height="31" width="88" /></a></p>
+
+</body>
+</html>

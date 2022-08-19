@@ -20,3 +20,15 @@ C:\Users\1515829\Desktop\WebCrawler\WebCrawler\obj\Debug\WebCrawler.csproj.CoreC
 C:\Users\1515829\Desktop\WebCrawler\WebCrawler\obj\Debug\WebCrawler.csproj.CopyComplete
 C:\Users\1515829\Desktop\WebCrawler\WebCrawler\obj\Debug\WebCrawler.exe
 C:\Users\1515829\Desktop\WebCrawler\WebCrawler\obj\Debug\WebCrawler.pdb
+C:\Users\adelk\OneDrive\Bureau\WebCrawler-BFS-DEPTH\WebCrawler\bin\Debug\WebCrawler.exe.config
+C:\Users\adelk\OneDrive\Bureau\WebCrawler-BFS-DEPTH\WebCrawler\bin\Debug\WebCrawler.exe
+C:\Users\adelk\OneDrive\Bureau\WebCrawler-BFS-DEPTH\WebCrawler\bin\Debug\WebCrawler.pdb
+C:\Users\adelk\OneDrive\Bureau\WebCrawler-BFS-DEPTH\WebCrawler\bin\Debug\HtmlAgilityPack.dll
+C:\Users\adelk\OneDrive\Bureau\WebCrawler-BFS-DEPTH\WebCrawler\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\adelk\OneDrive\Bureau\WebCrawler-BFS-DEPTH\WebCrawler\bin\Debug\HtmlAgilityPack.xml
+C:\Users\adelk\OneDrive\Bureau\WebCrawler-BFS-DEPTH\WebCrawler\obj\Debug\WebCrawler.csproj.AssemblyReference.cache
+C:\Users\adelk\OneDrive\Bureau\WebCrawler-BFS-DEPTH\WebCrawler\obj\Debug\WebCrawler.csproj.SuggestedBindingRedirects.cache
+C:\Users\adelk\OneDrive\Bureau\WebCrawler-BFS-DEPTH\WebCrawler\obj\Debug\WebCrawler.csproj.CoreCompileInputs.cache
+C:\Users\adelk\OneDrive\Bureau\WebCrawler-BFS-DEPTH\WebCrawler\obj\Debug\WebCrawler.csproj.CopyComplete
+C:\Users\adelk\OneDrive\Bureau\WebCrawler-BFS-DEPTH\WebCrawler\obj\Debug\WebCrawler.exe
+C:\Users\adelk\OneDrive\Bureau\WebCrawler-BFS-DEPTH\WebCrawler\obj\Debug\WebCrawler.pdb

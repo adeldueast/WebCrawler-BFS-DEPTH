@@ -1,0 +1,584 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Web Applications and the Ubiquitous Web</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="copyright" content="Copyright &#169; 2006 W3C (MIT, ERCIM, Keio)" />
+<meta name="font-size-adjustment" content="2" />
+<link rel="stylesheet" href="../02/woa/notebook.css"
+ type="text/css" media="screen, projection, print" />
+<script src="../../Talks/Tools/Slidy/slidy.js" type="text/javascript">
+</script>
+<style type="text/css">
+ div.slide h1 { margin-left: 0.5em; background-color: transparent }
+ #w3c-logo { margin-top: 0.6em }
+ div.slide.cover ol
+ {
+   position: absolute;
+   bottom:1em;
+   top: auto;
+   color: white;
+   background: transparent;
+ }
+ div.slide.cover li {margin: 0; margin-left: 3em; }
+ #mwi-logos { float: right; width: auto }
+ div.aims { margin-top: 2em; margin-bottom: 1em; width: 60%; }
+</style>
+</head>
+<body>
+<!-- this defines the slide background -->
+
+<div class="background">
+
+  <div class="margin">
+    <div class="header">
+    <!-- sized and colored via CSS -->
+    <img id="w3c-logo"
+    src="w3c-logo-pale-blue.png" alt="W3C logo" />
+    </div>
+    <!-- hidden style graphics to ensure they are saved with other content -->
+    <img class="hidden" src="../02/woa/square-bullet.gif" alt="" />
+    <img class="hidden" src="../02/woa/fold.bmp" alt="" />
+    <img class="hidden" src="../02/woa/fold.bmp" alt="" />
+    <img class="hidden" src="../02/woa/fold-dim.bmp" alt="" />
+
+    <img class="hidden" src="../02/woa/nofold-dim.bmp" alt="" />
+    <img class="hidden" src="../02/woa/unfold-dim.bmp" alt="" />
+    <img class="hidden" src="../02/woa/bullet-fold.gif" alt="" />
+    <img class="hidden" src="../02/woa/bullet-unfold.gif" alt="" />
+    <img class="hidden" src="../02/woa/bullet-fold-dim.gif" alt="" />
+    <img class="hidden" src="../02/woa/bullet-nofold-dim.gif" alt="" />
+    <img class="hidden" src="../02/woa/bullet-unfold-dim.gif" alt="" />
+    <img class="sharpener" src="../02/woa/sharpener.gif" alt="sharpener" />
+    <img class="pencil" src="../02/woa/pencil3.gif" alt="pencil" />
+
+  </div>
+</div>
+
+<div class="slide cover">
+<div class="header">
+<h1>Web Applications and the Ubiquitous Web</h1>
+<p><a href="http://www.w3.org/People/Raggett/">Dave Raggett</a>
+&lt;<a href="mailto:correc@ti.con">correc@ti.con</a>&gt;</p>
+</div>
+<img src="../02/woa/sky.jpg" class="cover"
+alt="wispy clouds in a blue sky" />
+<h2>Next Generation Web 2006, Seoul, Korea<br />
+13-14 March 2006</h2>
+<ol>
+<li>W3C work on web applications</li>
+<li>A look forward at the Ubiquitous Web</li>
+</ol>
+</div>
+
+
+
+<div class="slide">
+<h1>Core standards for Web Applications</h1>
+<ul>
+<li>Started with HTML, CSS and the DOM</li>
+<li>The move to XML</li>
+<li>An end to tag soup with XHTML</li>
+<li>The model-view-controller paradigm and XForms</li>
+<li>Time-based presentations with SMIL</li>
+<li>Animated, scalable graphics with SVG</li>
+<li>The lingua franca of Science - mathematics and MathML</li>
+</ul>
+</div>
+
+<div class="slide">
+<h1>The Mobile Web Initiative</h1>
+
+<img align="right" id="mwi-logos" src="mwi-logos.gif" alt="MWI sponsor logos" />
+<div class="aims">
+<p>Has the goal to make Web access from a mobile device as simple,
+easy, and convenient as Web access from a desktop device.</p>
+</div>
+
+<p>Current focus</p>
+
+<ul>
+<li>developing "best practices"</li>
+<li>"mobileOK" trustmark for Web sites
+<ul>
+<li>machine readable and aimed at search engines</li>
+</ul>
+</li>
+<li>work on device information needed for content adaptation</li>
+<li>marketing and outreach activities</li>
+</ul>
+
+<p>Established and maintained through the financial support of sponsors</p>
+</div>
+
+<div class="slide">
+<h1>Rich Web Clients Activity</h1>
+<ul>
+<li>Compound Document Formats
+<ul>
+<li>Specifying behavior for combinations such as
+XHTML, SVG, SMIL and XForms</li>
+</ul></li>
+<li>Web APIs
+<ul>
+<li>Focusing on standardizing established practice for
+web page scripting APIs such as XMLHttpRequest (AJAX),
+setTimeout, and the Window object</li>
+</ul></li>
+<li>Web Application Formats
+<ul>
+<li>Adopt, refine and possibly extend existing practices
+where possible</li>
+<li>Binding language such as XBL, and declarative user
+interface language, such as XUL</li>
+</ul>
+</li>
+</ul>
+</div>
+
+<div class="slide">
+<h1>Intelligent Content Adaptation</h1>
+<ul>
+<li>Protocols and APIs for device capabilities and
+user preferences
+<ul class="incremental">
+<li>Composite Capability/Preference Profiles (CC/PP)</li>
+<li>Delivery Context: Interfaces (DCI)</li>
+<li>Content Selection for Device Independence (DISelect)</li>
+<li>CSS Media queries and @media handheld</li>
+<li>Use of XSLT and other transformational techniques</li>
+</ul></li>
+<li>Authoring languages for content adaptation
+<ul class="incremental">
+<li>Designed for machine transformation to meet the needs
+of specific devices and user preferences</li>
+<li>Emphasis on declarative representations</li>
+<li>Can take advantage of latest techniques as you
+don't need to wait for client-side support
+<ul>
+<li>for example for XHTML 2 and XForms</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+
+<div class="slide">
+<h1>Speech and other modalities</h1>
+
+<p class="incremental">Self-service call centers
+as an alternative to visual access to web sites</p>
+
+<ul class="incremental">
+<li>VoiceXML as HTML for speech</li>
+<li>Speech Grammars (SRGS)</li>
+<li>Semantic Interpretation Rules (SISR)</li>
+<li>Speech Synthesis SSML and Pronunciation Lexicon</li>
+</ul>
+
+<p class="incremental">The promise of multimodality</p>
+
+<ul class="incremental">
+<li>Giving users the means to interact through speech, pen,
+visual displays and tactile interfaces</li>
+<li>EMMA as a way to represent interpreted user input</li>
+<li>InkML as an XML language for capturing pen input</li>
+</ul>
+</div>
+
+<div class="slide">
+<h1>IETF Widex Working Group</h1>
+
+<p>Developing a protocol for remote user interfaces based
+upon the Model-View-Controller paradigm, where the UI is
+expressed in terms of an XML DOM and the protocol is
+independent of the markup language.</p>
+<!--
+<p><img src="widex.gif" alt="diagram of server and renderer"
+style="text-align:center" /></p>
+-->
+<pre style="margin-left:10%;border:none;font-size:60%">
++-----------------------------+            +---------------+
+|       Widex Server          |            | Widex Renderer|
+| +-------+    .............. |            | +-----------+ |
+| |       |    .            .---------------&gt;|           | |
+| |       |    .    View    . |  Updates   | |           | |
+| |       |    .  (Virtual) .&lt;---------------|           | |
+| |       |    .............. |            | |   View    | |
+| | Model |                   |            | |           | |
+| |       |    +------------+ |            | |           | |
+| |       |    |            |&lt;---------------| (XML DOM) | |
+| |       |    | Controller | |   Events   | |           | |
+| |       |    |            |---------------&gt;|           | |
+| +-------+    +------------+ |            | +-----------+ |
++-----------------------------+            +---------------+
+</pre>
+
+<p class="smaller">See draft-ietf-widex-requirements-00.txt,
+V.&nbsp;Stirbu and D.&nbsp;Raggett, January 12th, 2006</p>
+
+<p class="smaller">W3C is working on a solution for streaming
+updates to SVG and Widex will seek to encompass resulting
+requirements through collaboration with W3C.</p>
+<!--
+<p class="smaller">Note: at the request of OMA and several W3C
+members, W3C has started work on a solution for streaming updates
+for SVG documents that will also work with other XML languages.
+Streaming introduces timing related requirements, and the W3C
+and IETF groups will coordinate their work on this.</p>
+-->
+</div>
+
+<div class="slide">
+<h1>Ubiquitous</h1>
+<div class="extract">
+<p><strong>Ubiquitous</strong>. [adj]</p>
+
+<ol>
+<li>(seemingly) present<br />
+everywhere simultaneously.</li>
+<li>often encountered<br />
+[Latin ubique everywhere]</li>
+</ol>
+<p><em>Oxford English Dictionary</em></p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Ubiquitous Computing</h1>
+<div class="extract">
+<p>Ubiquitous computing represents a powerful shift in
+computation, where people live, work, and play in a
+seamlessly interweaving computing environment.
+Ubiquitous computing postulates a world where people
+are surrounded by computing devices and a computing
+infrastructure that supports us in everything we do.</p>
+
+<p><em>Mark Weiser, The Computer of the 21st Century,
+    Scientific American, Sept 1991.</em></p>
+</div>
+</div>
+
+<div class="slide">
+<h1>The Ubiquitous Web</h1>
+
+<ul class="incremental">
+<li>Synthesis between the World Wide Web and Ubiquitous Computing
+<ul>
+<li>Applicable to home networks, offices, factory floor, mobile,
+cars, etc.</li>
+</ul>
+</li>
+<li>Making it much easier to build distributed applications
+across a diversity of networked devices
+<ul>
+<li>Enabling applications to be created using markup, style sheets
+and scripts</li>
+</ul>
+</li>
+<li>Context awareness - dynamically adapting to users,
+devices and environmental conditions
+<ul class="incremental">
+<li>Exploiting the features of each device, and not
+dropping to the lowest common denominator</li>
+<li>Giving users the means to select the modes of interaction
+that best meet their needs, subject to the capabilities of the
+devices</li>
+<li>Extending device capabilities through access to network
+services and through combination with other devices</li>
+<li>Providing remote user interfaces to devices and services
+<ul>
+<li>W3C/IETF collaboration on protocol for passing DOM events</li>
+</ul></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<div class="slide">
+<h1>The Ubiquitous Web</h1>
+
+<ul class="incremental">
+<li>Application mobility - enabling users to seamlessly switch
+between devices whilst continuing with the same application
+<ul>
+<li>seamless in the sense of not requiring significant conscious
+effort from users</li>
+</ul>
+</li>
+<li>A greater focus on the network rather than on particular
+devices, and an associated need to address trust, security,
+ privacy and identity
+<ul class="incremental">
+<li>Combining local information with network-based information sources</li>
+<li>Your data lives in the network, but applications need to
+allow for temporary lapses in connectivity</li>
+</ul>
+</li>
+<li>Providing the Web developer with a clean model
+of distributed applications
+<ul class="incremental">
+<li>URI's for describing devices, services and sessions</li>
+<li>A means to pass DOM events and updates between devices</li>
+<li>A Web-based approach to resource discovery and binding
+within temporary and persistent sessions</li>
+</ul>
+</li>
+</ul>
+</div>
+
+
+<div class="slide">
+<h1>Example: smart meeting</h1>
+
+<p>You are scheduled to meet with colleagues and plan to show a
+presentation using your cellphone as a controller and a networked
+wall screen as the display device.</p>
+
+<ul class="incremental">
+<li>Your slides are on the Web and linked from the agenda</li>
+<li>The corporate web server knows such things as:
+<ul class="incremental">
+<li>Who is expected to attend the meeting and the meeting agenda</li>
+<li>A floor plan for your building and what resources are available
+in each meeting room</li>
+<li>Details of your mobile phone and other personal devices</li>
+</ul>
+</li>
+<li>When you arrive in the meeting room
+
+<ul class="incremental">
+<li>The Bluetooth interface on the wall screen senses whose phones
+and notebooks are in the general neighborhood</li>
+<li>The meeting application running on the corporate server compares
+this to who is expected to attend</li>
+<li>Your phone is automatically set up to allow you to present your
+slides</li>
+<li>The audio and slide transitions are captured by the network for
+people who want to review it at a later date</li>
+</ul>
+</li>
+</ul>
+</div>
+
+<div class="slide">
+<h1>Trust, Security, Privacy and Identity</h1>
+<ul class="incremental">
+<li>Increasingly sensitive information and services will
+reside in the network
+<ul>
+<li>You will be willing to share information with people you trust</li>
+<li>This is necessary to fulfil the potential of the Web for rich
+applications</li>
+</ul>
+</li>
+<li>Trust is bounded and intransitive
+<ul>
+<li>You trust your bank with your personal finances, but not
+with your private life</li>
+<li>You trust Mary, and Mary trusts John, but this doesn't
+mean you trust John</li>
+</ul>
+</li>
+<li>Information access can be modelled in terms of identity and
+group membership
+<ul>
+<li>Membership of a group entitles access to
+information available to that group</li>
+<li>Proof of membership is dependent on proving that you have
+a given identity (or persona)</li>
+<li>Organizations can also be treated as persona</li>
+</ul>
+</li>
+<li>Digital Rights Descriptions and Digital Rights Management</li>
+</ul>
+</div>
+
+<div class="slide">
+<h1>Trust and devices</h1>
+
+<ul class="incremental">
+<li>You are in an airport lounge or a hotel room and
+wish to print a company confidential document</li>
+<li>Where is the printer, and can it be trusted not
+to save a copy or to forward a copy onto someone else?</li>
+<li>One idea is to walk up to the printer and give it your
+document via a USB thumb drive, or via bluetooth from your phone</li>
+<li>You may also be able to ask the printer to prove its identity
+and to compare that to the one shown on the airport/hotel's
+website
+<ul>
+<li>A trusted physical communication path between the printer and
+your mobile device</li>
+<li>Based upon public keys and security certificates signed
+by a trusted agency</li>
+</ul>
+</li>
+</ul>
+
+<p class="incremental"><span>W3C Workshop on
+<a href="/2005/Security/usability-ws/">Transparency and
+Usability of Web Authentication</a>, 15-16 March, New York</span></p>
+</div>
+
+<div class="slide">
+<h1>Access to network based capabilities</h1>
+
+<p>Examples:</p>
+
+<ul class="incremental">
+<li>Geographic location service
+<ul>
+<li>Device includes GPS front end and passes this data
+to a server where 3rd party service converts this into
+the location format needed by the application</li>
+<li>This is passed back to the device and exposed as a
+DOM Event</li>
+<li>The web application doesn't need to know the details
+and instead is only concerned about the location format
+and frequency of updates</li>
+</ul></li>
+<li>Speech services
+<ul>
+<li>An audio extension streams audio to/from the network</li>
+<li>This is exposed as a JavaScript object that supports
+speech synthesis and recognition through access to remote
+speech services</li>
+<li>The Web application doesn't need to know the details of
+the protocol used to access the remote speech services</li>
+</ul></li>
+</ul>
+</div>
+
+<div class="slide">
+<h1>Layered approach to device coordination</h1>
+
+<ul class="incremental">
+<li>Descriptions of devices and services
+<ul class="incremental">
+<li>URI's for describing devices, services and sessions</li>
+<li>This enables the use of RDF and the Semantic Web</li>
+<li>That makes it easy to combine distributed information sources</li>
+<li>Also a role for more informal collective approaches (folksonomies)</li>
+</ul></li>
+<li>Discovery and binding
+<ul class="incremental">
+<li>Relies on access to multiple information sources</li>
+<li>To find a nearby printer, first find out where you are,
+then find printers in nearby locations</li>
+<li>Web applications don't need to know details of discovery
+protocols</li>
+<li>Discovery can be supported through Web servers and implemented
+in terms of existing Web Services standards such as
+SOAP, WSDL, UDDI, or simpler use of HTTP (REST)</li>
+<li>Restricted role for UPnP (universal plug and play)</li>
+</ul></li>
+</ul>
+</div>
+
+<div class="slide">
+<h1>Discovery and Home Networks</h1>
+
+<ul class="incremental">
+<li>Users of home networks require easy configuration
+and diagnosis of problems when faults occur</li>
+<li>You purchase a new wireless printer and power it up</li>
+<li>How does the printer know which network to attach to?
+<ul>
+<li>Your neighbor's network may have a stronger signal</li>
+</ul></li>
+
+<li>Solution involves telling your printer about your network,
+or your network about the printer, or both</li>
+<li>This involves the user in some way, but how can we simplify
+this?
+<ul>
+<li>One idea is to use RFID tags</li>
+<li>Another is to use your mobile phone as a reader
+for 2D bar codes</li>
+</ul>
+</li>
+<li>Discovery may involve some human intervention!</li>
+</ul>
+</div>
+
+<div class="slide">
+<h1>Extending the Web into the Physical World</h1>
+
+<ul class="incremental">
+<li>Most people associate the Web with browsing websites
+from a desktop computer, or perhaps a smart phone</li>
+<li>Web technologies can also be applied to applications
+involving devices acting as sensors and effectors</li>
+<li>These can be used throughout the home, office, or
+factory, etc.</li>
+<li>Applications are written with a combination of markup
+and scripting with events that are passed between devices</li>
+<li>Layered architecture hides details of what communication
+protocols are used at the transport layer</li>
+<li>Web application has a simple view of the sensor/effector
+as a DOM object that you can set properties and event handlers</li>
+</ul>
+</div>
+
+<div class="slide">
+<h1>W3C Ubiquitous Web Workshop</h1>
+
+<p>Keio University, Tokyo, 9-10 March 2006</p>
+
+<!--
+<p>The main objective of this workshop was to help W3C to build
+a better understanding of the Ubiquitous Web, and to identify
+potential areas for standardization:</p>
+-->
+
+<ul>
+<li>To explore the vision of the Web as a distributed applications platform that works across a wide range of devices in areas such as offices, home networks, mobile, automotive, aviation, etc. with the potential for increasing the range and reducing the cost of developing and deploying such applications.</li>
+<li>To explain how current W3C work fits into this vision, e.g. work on Web Application API's, Delivery Context Interfaces, Device Descriptions, Multimodal Architecture, etc.</li>
+<li>To identify and prioritize additional areas which would benefit from standardization, in particular, the integration of sessions and device coordination into web applications.</li>
+</ul>
+
+<p>See <a href="../../2005/10/ubiweb-workshop-cfp.html">Call for
+Participation</a> and <a href="../02/ubiwebws-agenda.html">Workshop
+Agenda</a> for details including the slide presentations.</p>
+</div>
+
+<div class="slide">
+<h1>W3C and Benefits of W3C Membership</h1>
+
+<ul>
+<li>W3C's mission is leading the Web to its full potential</li>
+<li>400 Member organizations world wide</li>
+<li>Develops Web standards and guidelines
+<ul>
+<li>Since 1994, W3C has published more than 90 W3C Recommendations</li>
+<li>Covering such subjects as HTML, CSS, DOM, SMIL, XML, SVG,
+WCAG, Web Services, RDF and the Semantic Web, and many more core
+technologies for the World Wide Web</li>
+</ul></li>
+<li>W3C is hosted by MIT (USA), ERCIM (France) and Keio (Japan)
+<ul>
+<li>With W3C Offices in Australia, Belgium, Finland, Germany, Greece,
+Hong Kong, Hungary, India, Israel, Italy, Korea (ETRI), Morocco,
+Spain, Sweden and the United Kingdom</li>
+</ul></li>
+<li>Membership gives you the chance to directly influence the
+technical evolution of the Web</li>
+<li>For more details see
+<tt><a href="http://www.w3.org/">www.w3.org</a></tt></li>
+</ul>
+</div>
+
+<div class="slide">
+<h1>Acknowledgements</h1>
+
+<p>My thanks to Volantis to sponsoring me as a W3C Fellow</p>
+
+<p><img src="volantis.jpg" alt="Volantis logo" /></p>
+
+<p><br /><br /><br />Questions Please!</p>
+
+</div>
+</body>
+</html>

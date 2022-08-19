@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Windows (vers 1 September 2005), see www.w3.org" />
+
+  <title>HTML Tidy</title>
+  <link rel="stylesheet" type="text/css" href="../parsons.css" />
+  <link rel="Author" href="../home.htm" />
+  <link rel="Copyright" href="../copyright.htm" />
+  <meta name="Description" content=
+  "HTML Tidy by Dave Raggett and SourceForge - compiled using MinGW" />
+  <meta name="KeyWords" content=
+  "Tidy, HTMLTidy, MinGW, Source Forge, W3C, Dave Raggett" />
+</head>
+
+<body>
+  <div id="header">
+    <h1>HTML Tidy</h1>
+
+    <div class="hrfancy">
+      <hr />
+    </div>
+  </div>
+
+  <div id="content">
+    <p>HTML Tidy is a tool that was originally written by Dave
+    Raggett of the <a href="http://www.w3.org/"><img src=
+    "../images/world.gif" width="17" height="15" class="bullet"
+    alt="[Off Site]" />World Wide Web Consortium (W3C)</a>. It is
+    designed to fix mistakes in HTML, tidy up the layout (hence the
+    name), assist with web accessibility, convert HTML to XHTML and
+    many other things.</p>
+
+    <p>The software is now maintained by a group of volunteers
+    working as an <a href="http://tidy.sourceforge.net/"><img src=
+    "../images/world.gif" width="17" height="15" class="bullet"
+    alt="[Off Site]" />Open Source Community at Source Forge</a>
+    and this is the place to go for more information.</p>
+
+    <p>The version down-loadable from this page has been taken from
+    a recent &#8216;Beta&#8217; source released by the Source Forge
+    volunteers and compiled for Win32 using <a href=
+    "http://www.mingw.org/"><img src="../images/world.gif" width=
+    "17" height="15" class="bullet" alt="[Off Site]" />MinGW</a>
+    (Minimalist GNU for Windows). This produces a very compact
+    binary which requires no additional libraries or environment in
+    which to run. It is now built from the &#8220;tidylib&#8221;
+    sources without the Asian and UTF16 character encodings or the
+    Accessibility checks. There are two executables in the ZIP
+    file, <code>tidy.exe</code> and <code>tab2space.exe</code>.</p>
+
+    <p>I try to keep my system virus free but you do check
+    downloaded files yourself, don&#8217;t you? &lt;g&gt;</p>
+
+    <h3>Download the latest version</h3>
+
+    <p class="big">Version of 1 Sep 2005 &#8212; built 8 Dec
+    2005</p>
+
+    <p class="big"><a href=
+    "http://west-penwith.org.uk/misc/tidy.zip">tidy.zip</a>
+    (&lt;230K)</p>
+
+    <h3>Signature</h3>
+    <pre>
+-----BEGIN PGP SIGNATURE-----
+Version: PGP 8.0.3 - not licensed for commercial use: www.pgp.com
+
+iQA/AwUAQ5i/0N+E1RVVVycKEQInFwCeLo2NeLlCWI01c3csQpCRjOj4g6wAoNSg
+25sjwRsuIUOfJHquAJrJr/s1
+=4h9n
+-----END PGP SIGNATURE-----
+</pre>
+
+    <p>My public key can be found on my <a href="pgpkey.htm">home
+    site</a> or on the public key servers&#8212;identified by
+    <code>Rick Parsons &amp; west-penwith.org.uk</code>.</p>
+
+    <h3>Install and Uninstall</h3>
+
+    <p>These tools do not require any external libraries or
+    environment. Just unzip them to where they are needed,
+    preferably a folder which is in the search path.</p>
+
+    <p>Uninstall? Just delete the two files.</p>
+
+    <h3>To run Tidy</h3>
+
+    <p>This is a command line application so you will need a Cmd or
+    DOS window. Make sure that the tidy.exe is in a folder
+    contained in the search path (defined in
+    <code>AUTOEXEC.BAT</code> before Win-XP or in <code>My Computer
+    &#8212;&gt; Properties &#8212;&gt; Advanced &#8212;&gt;
+    Environment Variables &#8212;&gt; System Variables &#8212;&gt;
+    Path</code> for Win-XP). The program is run using the
+    command</p>
+    <pre class="screen">
+C:\&gt;tidy [-switches] file.htm
+</pre>
+
+    <p>See the documentation at <a href=
+    "http://tidy.sourceforge.net/"><img src="../images/world.gif"
+    width="17" height="15" class="bullet" alt="[Off Site]" />Source
+    Forge</a> for a full instruction manual.</p>
+
+    <p>I am unable to help with the use of this program and accept
+    no liability for any problems with it, however caused. Use at
+    your own risk.</p>
+
+    <h3>Build notes</h3>
+
+    <p>To build the tidy system you need the MinGW
+    &#8220;composite&#8221; system (I am currently using version
+    3.1.0-1) and also the Make component (version 3.80.0-3). Then
+    put the binary directory (probably
+    <code>C:\MinGW\bin</code>)into the path. To do this (from an
+    admin account in Win-XP) select <code>My Computer &#8212;&gt;
+    Properties &#8212;&gt; Advanced &#8212;&gt; Environment
+    Variables</code> and edit the <code>Path</code> in the
+    <code>System Variables</code> section adding
+    <code>;C:\MinGW\bin</code> to the end (that is a semi-colon at
+    the start).</p>
+
+    <p>There were some minor issues during the build that are worth
+    mentioning.</p>
+
+    <ol>
+      <li>For some reason there is no alias <code>make</code> or
+      <code>gmake</code> in the MinGW directory so the procedure is
+      to <code>cd</code> to <code>tidy\build\gmake</code> and issue
+      the command <code>mingw32-make</code>.</li>
+
+      <li>
+        <p>The make objected to all the lines of the form</p>
+        <pre class="screen">
+if [ ! -d $(DIR) ]; then mkdir $(DIR); fi
+</pre>
+
+        <p>Whether that is something fundamental I have not
+        checked, but in the mean time a workaround is to create the
+        required directories by hand (<code>bin &amp; lib</code> in
+        the root directory, <code>obj</code> in the
+        <code>build\gmake</code> directory) and ignore the syntax
+        errors. Update&#8212;with version 3.80.0-3 of make from
+        MinGW I have had to comment these lines out of the Makefile
+        as the syntax errors are fatal.</p>
+      </li>
+
+      <li>
+        <p>MinGW make does not require (in fact objects to) the
+        explicit request for the c library ( -lc switch). I
+        commented out the line in the Makefile</p>
+        <pre class="screen">
+# LIBS=-lc
+</pre>
+      </li>
+    </ol>
+
+    <h3>NoteTab Pro</h3>
+
+    <p>To install as a plugin to NoteTab Pro, I use the following
+    <code>tidy.cfg</code> file in the NoteTab Pro install folder.
+    Some of these are my personal preferences.</p>
+    <pre class="screen">
+tab-size: 8
+indent: auto
+enclose-text: yes
+wrap-script-literals: no
+tidy-mark: yes
+doctype: auto
+output-xhtml: yes
+numeric-entities: yes
+quiet: yes
+</pre>
+<!--
+    <h4>Advertisement</h4>
+
+    <p>Hosting: HostGator offers <a href=
+    "http://www.hostgator.com/">web hosting</a> and <a href=
+    "http://www.hostgator.com/dedicated.shtml">dedicated
+    servers</a></p>
+    -->
+  </div>
+
+  <div id="footer">
+    <div class="hrfancy">
+      <hr />
+    </div>
+
+    <div id="flogo">
+      <p><a href="../home.htm"><img src="../images/Home.gif" width=
+      "60" height="103" alt="HOME" />Webmaster<br />
+      The Parsons home page.</a></p>
+    </div>
+
+    <div id="ffoot">
+      <p>&#169;2002&#8211;08 (last updated 21 Aug 2008) Rick
+      Parsons, Bristol, England</p>
+    </div>
+  </div>
+</body>
+</html>

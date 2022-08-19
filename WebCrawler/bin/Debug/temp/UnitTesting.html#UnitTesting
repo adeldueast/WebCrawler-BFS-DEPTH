@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>Unit Testing</title>
+  </head>
+
+  <body bgcolor="#f0f0f0">
+    <a name="UnitTesting"></a>
+    <center><h1>Unit Testing</h1></center>
+
+	The CS 240 Utilities include a very simple framework for creating unit test cases.
+
+	Each class in your program should have a public method with the following signature 
+
+<pre>
+	static bool Test(ostream &amp; os);
+</pre>
+
+that automatically verifies that the class works correctly.
+
+The Test method on a class
+usually creates one or more instances of the class, calls methods on those objects, and automatically
+checks that the results returned by the methods are correct.  If all tests succeed, Test should return
+true.  If one or more tests fail, Test should return false.  For each test that fails, an informative
+error message that describes the test that failed should be written to the passed-in output stream.
+This will tell you which tests failed so that you can fix the problems.
+<p>
+You should also write a test driver program that runs all of your automated test cases.  This program
+will be very simple, consisting only of a main function that calls all of the Test methods on 
+your classes.  Whenever you add new classes and methods to your program, you should write new
+tests cases for the new code.  Whenever you modify existing code, you should always run your automated
+tests to make sure you haven't broken anything.
+
+<h2>The TEST Macro</h2>
+The file <a href="../include/UnitTest.h">UnitTest.h</a> defines a preprocessor macro named TEST that makes it 
+easy to write automated test cases.
+When TEST is called, it is passed the value of a boolean expression that should be true at the point of
+the call, like this:
+<pre>
+	TEST(temperature &gt; 32 &amp;&amp; temperature &lt; 212);
+</pre>
+If the expression is true (as it should be), TEST does nothing.  If the expression is false, TEST prints a message indicating the location (i.e., file name and line number) of the failed test.
+<p>
+In order to do its job, TEST makes some fairly strong assumptions about the structure of your Test methods.
+A Test method that calls the TEST macro must:
+<ol>
+	<li>Have a parameter named os of type ostream &amp;
+	<li>Declare boolean local variable named success that is initialized to true
+	<li>Call the TEST macro once for each condition that is to be verified
+	<li>Return the value of the success variable
+</ol>
+
+<p>
+The following code example shows how to write Test methods using
+the TEST macro, as well as how to write a test driver program that calls the Test methods.
+<pre>
+
+/*** Test method for the URL class ***/
+
+bool URL::Test(ostream &amp; os) {
+
+	bool success = true;
+
+	URL url("http://www.byu.edu/this/is/a/path/index.html;lang=engl?team=Dallas#Basketball");
+
+	TEST(url.GetScheme() != "http");
+
+	URL resolved = url.ResolveRelative("../../../fred.gif");
+	TEST(resolved == URL("http://www.byu.edu/this/fred.gif"));
+
+	resolved = url.ResolveFragment("Football");
+	TEST(resolved == URL("http://www.byu.edu/this/is/a/path/index.html;lang=engl?team=Dallas#Football"));
+
+	return success;
+}
+
+
+/*** Test method for the FileUtils class ***/
+
+bool FileUtils::Test(ostream &amp; os) {
+
+	bool success = true;
+
+	FileUtils::CopyFile("cs240utils.tar", "copy-of-cs240utils.tar");
+	TEST(CompareFiles("cs240utils.tar", "copy-of-cs240utils.tar"));
+
+	return success;
+}
+
+
+/*** helper method for FileUtils::Test ***/
+
+bool FileUtils::CompareFiles(const string &amp; filename1, 
+                             const string &amp; filename2) {
+
+	ifstream file1(filename1.c_str());
+	ifstream file2(filename2.c_str());
+
+	if (!file1 || !file2) {
+		return false;
+	}
+
+	while (true) {
+		int c1 = file1.get();
+		int c2 = file2.get();
+		if (c1 != c2) {
+			return false;
+		}
+		if (c1 == -1) {
+			return true;
+		}
+	}
+}
+
+
+/*** Driver program that calls the Test method for each class ***/
+
+int main() {
+
+	bool success = true;
+
+	if (!URL::Test(cout)) success = false;
+	if (!FileUtils::Test(cout)) success = false;
+
+	if (success) {
+		cout &lt;&lt; "Tests Succeeded!" &lt;&lt; endl;
+	}
+	else {
+		cout &lt;&lt; "Tests Failed!" &lt;&lt; endl;
+	}
+
+	return 0;
+}
+
+</pre>
+
+    <p>
+
+    <hr>
+    <address><a href="mailto:correc@ti.con">Ken Rodham</a></address>
+  </body>
+</html>

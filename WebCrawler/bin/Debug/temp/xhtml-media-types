@@ -1,0 +1,937 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+  <title>XHTML Media Types - Second Edition</title>
+  <link rel="copyright" href="#copyright" />
+  <link rel="contents" href="#contents" />
+  <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" type="text/css" href="style/xhtml-default.css"/>
+  <link rel="stylesheet" type="text/css" href="style/style.css"/>
+  <link rel="alternate stylesheet" type="text/css" title="ruby" href="style/ruby.css"/>
+  <style type="text/css">
+    span.donot { color: red; /* font-weight: bold */ }
+    span.do { color: green; /* font-weight: bold */ }
+    p.guideline { background-color: #d5dee3;
+                  border-top-width: 4px;
+                  border-top-style: double;
+                  border-top-color: #d3d3d3;
+                  border-bottom-width: 4px;
+                  border-bottom-style: double;
+                  border-bottom-color: #d3d3d3;
+                  padding: 4px; margin: 0em }
+  </style>
+  <link rel="stylesheet" type="text/css" href="http://www.w3.org/StyleSheets/TR/W3C-WG-NOTE"/>
+</head>
+<body>
+<div class="head">
+<p>
+<a href="http://www.w3.org/"><img height="48" width="72" alt="W3C" src="http://www.w3.org/Icons/w3c_home"/></a>
+</p>
+
+<h1 id="title"><abbr title="Extensible HyperText Markup Language">XHTML</abbr>
+Media Types - Second Edition</h1>
+<h2 id="title2" class="title">Serving the Most Appropriate Content to Multiple User Agents from a Single Document Source</h2>
+
+<h2 id="date"><abbr title="World Wide Web Consortium">W3C</abbr>
+Working Group Note 
+16 January 2009</h2>
+
+<dl>
+<dt id="thisVersion">This version:</dt>
+
+<dd><a href="http://www.w3.org/TR/2009/NOTE-xhtml-media-types-20090116"
+    >http://www.w3.org/TR/2009/NOTE-xhtml-media-types-20090116</a></dd>
+
+<dt id="latestVersion">Latest version:</dt>
+
+<dd><a href="http://www.w3.org/TR/xhtml-media-types"
+>http://www.w3.org/TR/xhtml-media-types</a></dd>
+
+<dt id="previousVersion">Previous version:</dt>
+
+<dd><a href="http://www.w3.org/TR/2002/NOTE-xhtml-media-types-20020801"
+    >http://www.w3.org/TR/2002/NOTE-xhtml-media-types-20020801</a></dd>
+
+<dt>Diff from previous version:</dt>
+<dd><a href="xhtml-media-types-diff.html">xhtml-media-types-diff.html</a></dd>
+
+
+<dt id="editor">Editor:</dt>
+    <dd><a href="mailto:correc@ti.con">Shane McCarron</a>,
+        <a href="http://www.aptest.com">Applied Testing and Technology,
+            <abbr title="Incorporated">Inc.</abbr></a>
+        </dd>
+
+<dt id="editor2">First Edition Editor:</dt>
+
+<dd><a xml:lang="ja" href="mailto:correc@ti.con"><ruby><rb>石川 雅康</rb>
+<rp>(</rp><rt><span class="familyname">Ishikawa</span>
+Masayasu</rt><rp>)</rp></ruby></a>, W3C</dd>
+</dl>
+
+<p id="copyright" class="copyright"><a
+href="http://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a>
+&copy; 2002-2009 <a href="http://www.w3.org/"><acronym title="World Wide
+Web Consortium">W3C</acronym></a><sup>&reg;</sup> (<a
+href="http://www.csail.mit.edu/"><acronym title="Massachusetts
+Institute of Technology">MIT</acronym></a>, <a
+href="http://www.ercim.org/"><acronym title="European Research
+Consortium for Informatics and Mathematics">ERCIM</acronym></a>, <a
+href="http://www.keio.ac.jp/">Keio</a>), All Rights Reserved. W3C <a
+href="http://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
+<a
+href="http://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a>
+and <a
+href="http://www.w3.org/Consortium/Legal/copyright-documents">document
+use</a> rules apply.</p>
+
+</div>
+
+<hr />
+
+<h2 id="abstract">Abstract</h2>
+
+<p>Many people want to use XHTML to author their web pages, but are confused
+about the best ways to deliver those pages in such a way that they will be 
+processed correctly by various user agents. This Note contains 
+suggestions
+about how to format XHTML to ensure it is maximally portable, and how to deliver
+XHTML to various user agents - even those that do not yet support XHTML natively.
+This document is intended to be used by document authors who want to use
+XHTML today, but want to be confident that their XHTML content is going to
+work in the greatest number of environments. The suggestions in this document
+are relevant to all XHTML Family Recommendations at the time of its publication.</p>
+
+<h2 id="status">Status of This Document</h2>
+
+<p><em>This section describes the status of this document at the time of
+its publication. Other documents may supersede this document. A list of
+current W3C publications and the latest revision of this technical report
+can be found in the <a href="http://www.w3.org/TR/">W3C technical reports
+index</a> at http://www.w3.org/TR/.</em></p>
+
+<p>This document is a Note made available by the World Wide Web
+Consortium (W3C) for your information. 
+Publication as a Working Group Note does not imply endorsement by
+the W3C Membership. This is a draft document and may be updated,
+replaced or obsoleted by other documents at any time. It is
+inappropriate to cite this document as other than work in
+progress.</p>
+
+<p>This document has been produced by the <a 
+href="http://www.w3.org/MarkUp/">W3C XHTML 2 Working Group</a> 
+as part of the <a href="http://www.w3.org/MarkUp/Activity">HTML Activity</a>.
+The goals of the XHTML 2 Working Group are discussed in
+the <a href="http://www.w3.org/2007/03/XHTML2-WG-charter">XHTML 2 Working Group
+charter</a>.
+The document represents working group consensus 
+on the usage of Internet media types for various XHTML Family documents.
+However, this document is not intended to be a normative specification.
+Instead, it documents a set of recommendations to maximize
+the interoperability of XHTML documents with regard to Internet media types.
+This document <em>does not</em> address general issues on
+media types and namespaces.</p>
+
+<p>Comments on this document may be sent to
+<a href="mailto:correc@ti.con">correc@ti.con</a>
+(<a href="http://lists.w3.org/Archives/Public/www-html-editor/">archive</a>).
+Public discussion on this document may take place on the mailing list <a
+href="mailto:correc@ti.con"> correc@ti.con</a> (<a href="http://lists.w3.org/Archives/Public/www-html/">archive</a>).</p>
+
+<p> This document was produced by a group operating under the <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/">5 February 2004 W3C Patent Policy</a>. W3C maintains a <a rel="disclosure" 
+href="http://www.w3.org/2004/01/pp-impl/32107/status">public list of any patent
+disclosures</a> made in connection with the deliverables of the group;
+that page also includes instructions for disclosing a patent. An individual who has actual knowledge of a patent which the individual believes contains <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/#def-essential">Essential Claim(s)</a> must disclose the information in accordance with <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/#sec-Disclosure">section 6 of the W3C Patent Policy</a>. </p> 
+
+
+<div class="toc">
+<h2 id="contents">Table of Contents</h2>
+
+<ul class="toc">
+<li>1. <a href="#intro">Introduction</a></li>
+
+<li>2. <a href="#terms">Terms and Definitions</a></li>
+
+<li>3. <a href="#media-types">Recommended Media Type Usage</a>
+<ul>
+<li>3.1. <a href="#text-html">'text/html'</a></li>
+<li>3.2. <a href="#application-xhtml-xml">'application/xhtml+xml'</a></li>
+</ul></li>
+<li>A. <a href="#compatGuidelines">Compatibility Guidelines</a></li>
+<li>B. <a href="#a_example">An Example Document</a></li>
+<li>C. <a href="#ref">References</a></li>
+<li>D. <a href="#changes">Changes from Previous Version</a></li>
+<li>E. <a href="#acks">Acknowledgements</a></li>
+</ul>
+</div>
+
+
+<h1><a id="intro">1. Introduction</a></h1>
+
+<p>XHTML 1.0 [<a href="#ref-xhtml1">XHTML1</a>] reformulated
+HTML 4 [<a href="#ref-html4">HTML4</a>] as an XML application,
+and XHTML Modularization [<a href="#ref-xhtml-m12n">XHTMLM12N</a>]
+provided a means to define XHTML-based markup languages using
+XHTML modules, collectively called the "XHTML Family".
+However, due to historical reasons, a recommended way to serve such
+XHTML Family documents, in particular with regard to Internet media
+types, was somewhat unclear.</p>
+
+<p>After the publication of [<a href="#ref-xhtml1">XHTML1</a>],
+an <abbr title="Request For Comments">RFC</abbr> for XML media
+types was revised and published as RFC 3023
+[<a href="#ref-rfc3023">RFC3023</a>], and it introduced the '+xml'
+suffix convention for XML-based media types.
+The 'application/xhtml+xml' media type [<a href="#ref-rfc3236">RFC3236</a>]
+was registered following that convention.
+There are several possible media types that can be used on XHTML Family
+documents.  This Note addresses only the use of 
+'text/html' and  'application/xhtml+xml'.</p>
+
+<p>This document summarizes the current best practice for using those various
+Internet media types for XHTML Family documents.</p>
+
+<p>In general, 'application/xhtml+xml'
+should be used for XHTML Family documents, and
+the use of 'text/html' should be limited to
+<abbr title="HyperText Markup Language">HTML</abbr>-compatible
+XHTML Family documents intended for delivery to user agents that 
+do not explicitly state in their HTTP Accept header that they 
+accept 'application/xhtml+xml' 
+[<a href="#ref-http">HTTP</a>].
+The media types 
+'application/xml' and 'text/xml' may also be used,
+but whenever appropriate, 'application/xhtml+xml' or 'text/html'
+should be used rather than those generic
+<abbr title="Extensible Markup Language">XML</abbr> media types.</p>
+
+<p>Note that, because of the lack of explicit support for XHTML (and
+XML in general)
+in some user agents, only very careful
+construction of documents can ensure their portability (see 
+<a href="#compatGuidelines">Appendix A</a>).
+If you do not require the advanced features 
+of XHTML Family markup languages (e.g., XML DOM, XML Validation, 
+extensibility via XHTML Modularization,
+semantic markup via
+XHTML+RDFa, Assistive Technology access via the XHTML Role and XHTML
+Access modules, etc.), you may want to consider using 
+HTML 4.01 [<a href="#ref-html4">HTML</a>]
+in order to reduce the risk that content will not be
+portable to HTML user agents. Even in that case authors can
+help ensure their portability AND ease their eventual migration to
+the XHTML Family by ensuring their documents are
+valid [<a href="#ref-validator">VALIDATOR</a>] and by
+following the relevant guidelines in 
+<a href="#compatGuidelines">Appendix A</a>.</p>
+
+
+<h1><a id="terms">2. Terms and Definitions</a></h1>
+
+<p><em>Note:  While this document sometimes uses terms like "must" and "should",
+    this document is not normative and those terms do not have the same meaning
+    as when they are used in a normative W3C specification.</em></p>
+
+<dl class="termlist">
+<dt id="term-XHTML">XHTML</dt>
+<dd>The Extensible HyperText Markup Language.	
+XHTML is <em>not</em> the name of a single, monolithic markup language,
+but the name of a family of document types which collectively form
+a family of related markup languages.  The namespace URI for the XHTML Family is
+<code class="URI">http://www.w3.org/1999/xhtml</code>.
+Examples of document types that are members of this family include
+[<a href="#ref-xhtml1">XHTML1</a>],
+and XHTML Host Language document types such as XHTML 1.1 [<a
+href="#ref-xhtml11">XHTML11</a>] and XHTML Basic [<a
+href="#ref-xhtml-basic">XHTMLBasic</a>].
+Elements and attributes in those document types belong to the XHTML
+namespace (except those from the XML namespace, such as
+<code class="attribute">xml:lang</code>), but an XHTML Family document type
+may also include elements and attributes from other
+namespaces, such as <abbr title="Mathematical Markup Language">MathML</abbr>
+[<a href="#ref-mathml2">MathML2</a>].</dd>
+
+</dl>
+
+
+<h1><a id="media-types">3. Recommended Media Type Usage</a></h1>
+
+<p>This section summarizes which Internet media type should
+be used for XHTML Family documents.
+Note that while some suggestions are made in this section with
+regard to content delivery, this section is by no means
+a comprehensive discussion of content negotiation techniques.</p>
+
+<p>That being said, a combination of these rules, in conjunction with a careful examination
+of the HTTP Accept header, can be useful in determining which media type
+to use when a document adheres to the guidelines in <a href="#compatGuidelines">
+    Appendix A</a>.  Specifically:</p>
+<ol>
+    <li>If the Accept header explicitly contains <code>application/xhtml+xml</code>
+    (with either no "q" parameter or a positive "q" value)
+    deliver the document using that media type.</li>
+    <li>If the Accept header explicitly contains <code>text/html</code>
+    (with either no "q" parameter or a positive "q" value)
+    deliver the document using that media type.</li>
+    <li>If the accept header contains "*/*" (a convention
+    some user agents use to indicate that they will accept anything),
+    deliver the document using <code>text/html</code>.</li>
+</ol>
+
+<p>In other words, 
+requestors that advertise they support XHTML family documents
+will receive the document in the XHTML media type,
+and all other requestors that (at least claim to)
+support HTML or "everything" will receive the document
+using the HTML media type. Dealing with
+user agents that satisfy none of these criteria 
+is outside the scope of this document.</p>
+
+<p>When an XHTML document does NOT adhere to the guidelines, it
+should only be delivered as media type <code>application/xhtml+xml</code>.</p>
+
+<h2><a id="application-xhtml-xml">3.1.
+'application/xhtml+xml'</a></h2>
+
+<p>The 'application/xhtml+xml' media type [<a href="#ref-rfc3236">RFC3236</a>]
+is the <strong>primary</strong> media type for XHTML Family documents.
+'application/xhtml+xml' should be used for serving
+XHTML documents to XHTML user agents (agents that
+<em>explicitly</em> indicate they support this media type).
+This media type must be used when writing documents using
+XHTML Family document types that add elements and attributes from
+foreign namespaces, such as XHTML+MathML
+[<a href="#ref-xhtml-mathml">XHTML+MathML</a>].</p>
+
+<h2 id="text-html">3.2. 'text/html'</h2>
+
+<p>The 'text/html' media type [<a href="#ref-rfc2854">RFC2854</a>] is
+primarily for HTML, not for XHTML.  In general, this media type is
+<strong>NOT</strong> suitable for XHTML except when the XHTML is 
+conforms to the guidelines in <a href="#compatGuidelines">Appendix A</a>.
+In particular, 'text/html' is <strong>NOT</strong> suitable for
+XHTML Family document types that add elements and attributes from
+foreign namespaces, such as XHTML+MathML
+[<a href="#ref-xhtml-mathml">XHTML+MathML</a>].</p>
+
+<p>XHTML documents served as 'text/html' will not be processed as
+XML [<a href="#ref-xml">XML10</a>], e.g., well-formedness errors
+may not be detected by user agents. Also be aware that HTML rules will
+be applied for <acronym title="Document Object Model">DOM</acronym> and
+style sheets 
+(see guidelines <a href="#C_11">11</a> and <a href="#C_13">13</a>).</p>
+
+<p>Authors should also be careful about character encoding issues.
+See <a href="#C_1">guideline 1</a> and <a href="#C_9">guideline 9</a> for details.</p>
+
+<h1><a id="compatGuidelines">Appendix A. Compatibility Guidelines</a></h1>
+
+<p>This appendix summarizes design guidelines for authors who
+wish their XHTML documents to render on <strong>both</strong>
+XHTML-aware and modern HTML user
+agents. The purpose of providing these guidelines is to supply a simple collection
+that, if followed, will give reasonable, predictable results in
+modern user agents.  Document authors should treat these as best practices 
+that were considered correct at the time this document was published. Like
+<em>all</em> of this document, this Appendix is <em>informative</em>.  
+These guidelines in no way change the conformance requirements of any 
+XHTML Family markup language.</p>
+
+<p>Note that these guidelines were originally published in 
+[<a href="#ref-xhtml1">XHTML1</a>]. They have been moved into this document
+and updated because they are applicable beyond that recommendation, and
+also because they needed to be updated to reflect changes in modern user
+agents since that recommendation was first published.</p>
+
+<p>For an example document that reflect the use of the 
+guidelines from this section, see <a href="#a_example">Appendix B</a>.</p>
+
+<h2 id="C_1">A.1. Processing Instructions and the XML Declaration</h2>
+<p class="guideline"><span class="donot">DO NOT</span> include XML processing instructions NOR the XML declaration.</p>
+<p><em>Rationale</em>:
+Some HTML user agents render XML processing instructions.  Also, 
+some user agents
+interpret the XML declaration to mean that the
+document is unrecognized XML rather than HTML. 
+Such user agents may not render the document as expected. 
+For compatibility with these types of 
+HTML browsers, you should avoid using processing instructions
+and XML declarations.</p>
+<p><em>Consequence</em>: Remember, however, that
+when the XML declaration is not included in a document, AND the
+character encoding is not specified by a higher level protocol
+such as HTTP, the document
+can only use the default character encodings UTF-8 or UTF-16.
+See, however, <a href="#C_9">guideline 9</a> below.</p>
+
+<h2 id="C_2">A.2. Elements that can never have content</h2>
+<p class="guideline">If an element has an EMPTY content model <span class="do">DO</span> use the minimized tag syntax
+permitted by XML (e.g., <code>&lt;br&nbsp;/&gt;</code>).  
+<span class="donot">DO NOT</span> use the alternative syntax (e.g., <code>&lt;br&gt;&lt;/br&gt;</code>) allowed by XML, since this may be unsupported by 
+HTML user agents.
+Also, <span class="do">DO</span> include a space before the trailing <code>/</code> and <code>
+    &gt;</code>.</p>
+<p>Empty elements in the XHTML family include:
+<code>area</code>,
+<code>base</code>,
+<code>basefont</code>,
+<code>br</code>,
+<code>col</code>,
+<code>hr</code>,
+<code>img</code>,
+<code>input</code>,
+<code>isindex</code>,
+<code>link</code>,
+<code>meta</code>, and
+<code>param</code>.</p>
+
+<p><em>Rationale:</em> HTML user agents ignore the <code>&nbsp;/&gt;</code> at 
+the end of a tag, but without it they may incorrectly parse the tag or its attributes.  HTML user agents also may not recognize the alternate 
+syntax permitted by XML.</p>
+
+<h2 id="C_3">A.3. <em>Elements that have no content</em></h2>
+
+<p class="guideline">If an element permits content (e.g., the <code>div</code> element) 
+but an instance of that element has no content (e.g., an empty
+section), <span class="do">DO NOT</span> use the
+"minimized" tag syntax (e.g., <code class="greenmono">&lt;div /&gt;</code>).
+</p>
+<p><em>Rationale:</em>
+HTML user agents may give uncertain results when using the 
+the minimized syntax permitted by XML when an element has no content.</p>
+
+<h2 id="C_4">A.4. Embedded Style Sheets and Scripts</h2>
+
+<p class="guideline"><span class="do">DO</span> use external style sheets if your style sheet uses <code>&lt;</code> 
+or <code>&amp;</code> or <code>]]&gt;</code> or <code>--</code>.
+
+<span class="donot">DO NOT</span> use an internal stylesheet
+if the style rules contain any of the above characters.</p>
+
+<p class="guideline"><span class="do">DO</span> use
+external scripts if your script uses <code>&lt;</code> or <code>
+    &amp;</code> or <code>]]&gt;</code> or <code>--</code>.
+    
+<span class="donot">DO NOT</span> embed a script in a document
+if it contains any of these characters.</p>
+
+<p><em>Rationale</em>: 
+While XML provides the CDATA structure to embed data such as this,
+that method will not work correctly should the document be delivered as
+media type <code>text/html</code>. The best way to insulate your scripts and 
+stylesheets is to make them external. Both XML and HTML 
+have mechanisms that can protect this content when it is embedded
+in a document.  If you must embed the content, the
+following patterns can be used:</p>
+
+<p>Portably escaping embedded script contents:</p>
+<pre>
+   &lt;script&gt;//&lt;![CDATA[
+   ...
+   //]]&gt;&lt;/script&gt;
+</pre>
+
+<p>Portably escaping embedded style contents:</p>
+<pre>
+   &lt;style&gt;/*&lt;![CDATA[*/
+   ...
+   /*]]&gt;*/&lt;/style&gt; 
+</pre>
+
+<h2 id="C_5">A.5. Line Breaks within Attribute Values</h2>
+
+<p class="guideline"><span class="do">DO</span> ensure that attribute values are on a single line and only use single whitespace characters.
+<span class="donot">DO NOT</span> use line breaks and multiple consecutive white space characters within
+attribute values.</p>
+
+<p><em>Rationale</em>: These are handled inconsistently by user
+agents - user agents are permitted to collapse multiple whitespace
+characters to a single white space character.</p>
+
+<h2 id="C_6">A.6.  <span class="error">Deleted</span></h2>
+
+<p>This guideline was deleted because it is no longer relevant.</p>
+
+<h2 id="C_7">A.7. The <code>lang</code> and <code>xml:lang</code> Attributes</h2>
+
+<p class="guideline"><span class="do">DO</span> use both <code>lang</code> and <code>xml:lang</code>
+attributes when specifying the language of an element in markup languages that support the use of both.</p>
+
+<p><em>Rationale</em>:
+HTML 4 documents use the <code>lang</code> attribute
+to identify the language 
+of an element.  XML documents use the <code>xml:lang</code> attribute.
+CSS has a "lang" pseudo-selector that automatically uses the appropriate
+attribute depending on the media type.  Therefore, specifying both
+attributes ensures that single CSS selectors will work in both modes.
+</p>
+
+<h2 id="C_8">A.8. Fragment Identifiers</h2>
+
+<p class="guideline"><span class="do">DO</span> use the <code>id</code> attribute to identify elements.</p>
+<p class="guideline"><span class="do">DO</span> ensure that the values used for the <code>id</code> attribute are limited to the pattern
+<code>[A-Za-z][A-Za-z0-9:_.-]*</code>.</p>
+<p class="guideline"><span class="donot">DO NOT</span> use the <code>name</code> attribute to identify elements, even in languages that
+permit the use of <code>name</code> such as XHTML 1.0.</p>
+
+<p><em>Rationale</em>: In HTML 3.2 and earlier the
+<code>name</code> attribute on some elements could 
+be used to define an anchor, but HTML 4 introduced the
+<code>id</code> attribute.  In an XML dialect, only attributes
+with type <code>ID</code> are permitted to be used
+as anchors, and the <code>id</code> attribute is defined to be
+of type <code>ID</code>.  Relying upon the <code>id</code> attribute
+as an anchor will work well in modern HTML and 
+XHTML-aware user agents.</p>
+
+<h2 id="C_9">A.9. Character Encoding</h2>
+
+<p class="guideline"><span class="do">DO</span> encode your document
+in UTF-8 or UTF-16.
+When delivering the document
+from a server, <span class="do">DO</span> set the character encoding for a document via the 
+charset parameter of the HTTP Content-Type header. 
+When not delivering the document from a server, <span class="do">DO</span> 
+set the encoding via a "meta http-equiv" statement in the document (e.g., <samp>&lt;meta http-equiv="Content-Type"
+    content="text/html; charset=utf-8"&#160;/></samp>). However, note that doing so will explicitly
+bind the document to an a single content type.</p>
+
+<p><em>Rationale</em>: Since these guidelines already recommend that
+documents NOT contain the XML declaration, setting the encoding via the
+HTTP header is the only reliable mechanism compatible with
+HTML and XML user agents. When that mechanism is not available, the only portable
+fallback is the "meta http-equiv" statement.</p>
+
+<h2 id="C_10">A.10. Boolean Attributes</h2>
+<p class="guideline"><span class="do">DO</span> use the full form for boolean attributes, as required by
+XML (e.g., <code>disabled="disabled"</code>).
+Such attributes include:
+<code>compact</code>, <code>nowrap</code>, <code>ismap</code>, 
+<code>declare</code>, <code>noshade</code>, <code>checked</code>, 
+<code>disabled</code>, <code>readonly</code>,
+<code>multiple</code>, <code>selected</code>, <code>noresize</code>, 
+and <code>defer</code>.</p>
+<p><em>Rationale</em>: The compact form of these attributes is not
+well formed XML, and therefore invalid.</p>
+
+<h2 id="C_11">A.11. Document Object Model and XHTML</h2>
+<p class="guideline"><span class="do">DO</span> ensure examination of element and attribute
+names in scripts that use the <abbr title="Document Object Model">DOM</abbr>
+as defined in The Document Object Model level 1 Recommendation [<a href="#ref-dom">DOM</a>]
+are case-insensitive.
+</p>
+
+<p><em>Rationale</em>: This will ensure maximum portability of
+scripts, since the DOM methods will return element and attribute names
+in uppercase when served as <code>text/html</code> and in 
+lowercase when served as <code>application/xhtml+xml</code>.</p>
+
+<p>For example, in JavaScript you might do something like:</p>
+
+<pre>
+    ...
+    var name=node.name().toLowerCase;
+    if ( name == 'table' ) {
+       ...
+    }
+</pre>
+
+<p>For more information on this, see also section 1.3 XHTML and the HTML DOM in [<a href="#ref-htmldom2">HTMLDOM2</a>].</p>
+
+<h2 id="C_12">A.12. Using Ampersands</h2>
+<p class="guideline"><span class="do">DO</span> ensure that when content or attribute values contain
+the reserved character <code>&amp;</code> 
+it is used in its escaped form <code>&amp;amp;</code>.</p>
+
+<p><em>Rationale</em>: If ampersands are not encoded, the characters after 
+them up to the next semi-colon can be interpreted as the name of a 
+entity by the user agent. The document could also be considered not "well-formed" by an XML processor.</p>
+
+<h2 id="C_13">A.13. Cascading Style Sheets (CSS) and XHTML</h2>
+<p class="guideline"><span class="do">DO</span> use lower case element and attribute names in style sheets.
+<span class="do">DO</span> create rules that include inferred elements (e.g., the <code>tbody</code>
+element in a table).</p>
+<p><em>Rationale</em>: These simple rules will help increase the portability of
+CSS rules regardless of the media type the document is processed as.</p>
+
+<h2 id="C_14">A.14. Referencing Style Elements when serving as XML</h2>
+<p class="guideline"><span class="donot">DO NOT</span> use <code>xml-stylesheet</code> declarations to identify style
+sheets.</p>
+<p class="guideline"><span class="do">DO</span> use the <code>style</code> or <code>link</code> elements to 
+define stylesheets.</p>
+
+<p><em>Rationale</em>: Since XML processing instructions may be 
+rendered by some HTML user agents, using the standard XML stylesheet
+declaration mechanism may not work well.  However, since XHTML user agents
+are required to process <code>style</code> and <code>link</code> elements
+and interpret stylesheets referenced from those elements, documents
+constructed to use them will work as expected.</p>
+
+<h2 id="C_15">A.15. Formfeed Character in HTML vs. XML</h2>
+<p class="guideline"><span class="donot">DO NOT</span> use the formfeed character (U+000C).</p>
+
+<p><em>Rationale</em>: This character is recognized as white space
+in HTML 4, but is NOT considered white space in all versions of XML.</p>
+
+<h2 id="C_16">A.16. The Named Character Reference &amp;apos;</h2>
+<p class="guideline"><span class="do">DO</span> use <code>&amp;#39;</code> to specify an escaped apostrophe.
+<span class="donot">DO NOT</span> use <code>&amp;apos;</code>.</p>
+
+<p><em>Rationale</em>: The entity <code>&amp;apos;</code> is not defined 
+in HTML 4.</p>
+
+<h2 id="C_17">A.17. The XML DTD Internal Subset</h2>
+<p class="guideline"><span class="donot">DO NOT</span> use the XML DTD internal subset mechanism as
+part of the DOCTYPE declaration.</p>
+
+<p><em>Rationale</em>: The subset mechanism is not supported by non-XML user agents.</p>
+
+<h2 id="C_18">A.18. CDATA Sections</h2>
+<p class="guideline"><span class="donot">DO NOT</span> use the XML CDATA mechanism excepting as
+described in <a href="#C_4">guideline 4</a> above.</p>
+
+<p><em>Rationale</em>: This mechanism is not supported in non-XML user agents.</p>
+
+<h2 id="C_19">A.19. Explicit &lt;tbody&gt; Elements</h2>
+<p class="guideline"><span class="do">DO</span> use explicit <code>tbody</code> elements
+within tables.</p>
+
+<p><em>Rationale</em>: While the content model of the <code>table</code> element permits
+the <code>tbody</code> element to be skipped, in HTML 4 this element is <em>implicit</em>.  
+HTML 4 user agents will silently add this element, thus potentially confusing
+scripts or style sheets.</p>
+
+
+<h2 id="C_20">A.20. <code>base</code> vs. <code>xml:base</code></h2>
+
+<p class="guideline"><span class="do">DO</span> use the <code>base</code> element if you
+need to establish an alternate base URI for your document.
+<span class="donot">DO NOT</span> use the <code>xml:base</code> attribute.</p>
+
+<p><em>Rationale</em>: Most
+XHTML Family markup languages do not even support <code>xml:base</code>, relying instead upon the (X)HTML
+element <code>base</code>. HTML user agents do not support <code>xml:base</code> at all.</p>
+
+<h2 id="C_21">A.21. <code>document.write</code></h2>
+<p class="guideline"><span class="donot">DO NOT</span> use the JavaScript methods <code>document.write</code>
+or <code>document.writeln</code> to change the document.
+<span class="do">DO</span> use DOM manipulation to achieve the same effect.</p>
+
+<p><em>Rationale</em>: Native XML user agents may not support this technique for modifying the content of the document.</p>
+
+<h2 id="C_22">A.22. Updating a document using <code>innerHTML</code></h2>
+
+<p class="guideline"><span class="donot">DO NOT</span> use the
+the JavaScript <code>innerHTML</code> method
+(supported by some user agents) to update a document
+dynamically.<span class="do">DO</span> use standard DOM
+manipulation techniques instead. If you choose to use this method, ensure that
+it is available in the user agent and then ensure
+that any content inserted via the method is well-formed AND conforms to these
+guidelines so it is HTML 4 compatible.</p>
+
+<p><em>Rationale</em>: There are many other standard Document Object Model
+methods for updating a document that will do so more portably than
+this non-standard method.</p>
+
+<h2 id="C_23">A.23. Scripts and missing <code>tbody</code> elements</h2>
+
+<p class="guideline"><span class="do">DO</span> ensure that if <code>tbody</code>
+elements are omitted from <code>table</code> elements,
+scripts that examine the document tree are capable of working both with
+and without the element.</p>
+
+<p><em>Rationale</em>: See <a href="#C_19">guideline 19</a> above.</p>
+
+<h2 id="C_24">A.24. Styling the entire document</h2>
+
+<p class="guideline"><span class="do">DO</span> ensure that any CSS
+properties on the <code>html</code> element are also
+specified on the <code>body</code> element.</p>
+
+<p><em>Rationale</em>: Some HTML user agents only recognize CSS properties on the
+<code>body</code> element.</p>
+
+<h2 id="C_25">A.25. <code>noscript</code> Element</h2>
+
+<p class="guideline"><span class="donot">DO NOT</span> use the <code>noscript</code>
+element.</p>
+
+<p><em>Rationale</em>: The contents of this element are treated differently
+depending on whether the document is evaluated as XML or HTML,
+as well as whether scripting is enabled in the user agent or not.</p>
+
+<h2 id="C_26">A.26. <code>iframe</code> Element</h2>
+
+<p class="guideline"><span class="donot">DO NOT</span> embed content in
+the <code>iframe</code> element.
+<span class="do">DO</span> use the <code>src</code> attribute to incorporate
+data via the <code>iframe</code> element.</p>
+
+<p><em>Rationale</em>: Content embedded in this element is treated differently
+depending on whether the document is evaluated as XML or HTML,
+as well as whether scripting is enabled in the user agent or not.
+The contents of the frame can be imported from an external
+source via the <code>src</code> attribute.</p>
+
+<h2 id="C_27">A.27. Creating elements in JavaScript</h2>
+
+<p class="guideline"><span class="do">DO</span> create new Document 
+Object Model elements via the <code>createElementNS</code> method
+if it is available.  If it is not, fallback to the <code>createElement</code>
+method.</p>
+
+<p><em>Rationale</em>: The createElementNS method will work as expected in 
+both HTML and XML contexts, but it is not supported in all user agents.</p>
+
+<h1><a id="a_example">Appendix B. An Example Document</a></h1>
+
+<p>The following is an example document that adopts the conventions
+described in Appendix A to ensure its portability among
+XHTML and HTML user agents. This example uses XHTML 1.0 Strict.
+It could also have used XHTML 1.1.  In that case the top of the
+document would look like:</p>
+
+<pre class="example">
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" 
+                      "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"&gt;
+</pre>
+
+<p>In this case, note that the <code>lang</code> attribute is not used
+on the <code>html</code> element.  XHTML 1.1 does not support the
+<code>lang</code> attribute.</p>
+
+<pre class="example">
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;
+&lt;!-- use lang and xml:lang if your language supports it - A.7 --&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"&gt;
+&lt;head&gt;
+  &lt;title&gt;Example Portable XHTML&lt;/title&gt;
+  &lt;!-- Embed encoding when you can't set it from the server - A.9 --&gt;
+  &lt;meta http-equiv="Content-Type"
+        content="text/html; charset=utf-8" /&gt;
+
+  &lt;!-- use base, not xml:base - A.20 --&gt;
+  &lt;base href="http://www.w3.org/MarkUp" /&gt;
+
+  &lt;!-- use an external stylesheet or script - A.4, A.14 --&gt;
+  &lt;link href="style/style.css" rel="stylesheet" type="text/css" /&gt;
+
+  &lt;!-- if you must embed, escape bad stuff - A.4, A.14 --&gt;
+  &lt;style type="text/css"&gt;/*&lt;![CDATA[*/
+      /* Use lower case names in stylesheets - A.13 */
+      .main { padding-left: 10px; }
+      /* put properties on whole document - A.24 */
+      html {background-color: #e4e5e9; }
+      body {background-color: #e4e5e9; }
+  /*]]&gt;*/&lt;/style&gt;
+
+  &lt;!-- Need full form of boolean attributes like defer - A.10 --&gt;
+  &lt;script defer="defer" type="text/javascript"&gt;//&lt;![CDATA[
+      var SOME_VALUE="&lt;this is a test&gt;";
+  //]]&gt;&lt;/script&gt;
+
+&lt;/head&gt;
+
+&lt;body&gt;
+
+&lt;!-- use the id attribute to identify elements - A.8 --&gt;
+&lt;div id="main"&gt;
+
+    &lt;!-- ensure there are never linebreaks in attribute values - A.5 --&gt;
+    &lt;h1 title="This section shows how to write portable content"&gt;
+        Main Section
+    &lt;/h1&gt;
+    &lt;!-- IMG can never have content so use shorthand form - A.2 --&gt;
+    &lt;img src="http://www.w3.org/Icons/w3c_main" alt="W3C logo" /&gt;  	
+
+    &lt;!-- An element with no content cannot use shorthand - A.3 --&gt;
+    &lt;p&gt;&lt;/p&gt;
+    
+    &lt;!-- Apostrophes must be escaped using numeric - A.16 --&gt;
+    &lt;p title='rule for &amp;#39;ampersands&amp;#39;'&gt;
+
+        &lt;!-- Ampersands must be escaped - A.12 --&gt;
+        Some material &amp;amp; some other material
+
+    &lt;/p&gt;
+    &lt;table&gt;
+        &lt;!-- use explicit tbody element - A.19 --&gt;
+        &lt;tbody&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Table Cell&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<h1><a id="ref">Appendix C. References</a></h1>
+
+<dl>
+
+<dt><a class="ref" id="ref-dom">[DOM]</a></dt>
+
+<dd>"<cite><a href="http://www.w3.org/TR/1998/REC-DOM-Level-1-19981001"
+>Document Object Model (DOM) Level 1 Specification</a></cite>",
+L. Wood <i xml:lang="la">et al.</i>, 1 October 1998.<br />
+Available at: http://www.w3.org/TR/1998/REC-DOM-Level-1-19981001</dd>
+
+<dt><a class="ref" id="ref-htmldom2">[HTMLDOM2]</a></dt>
+
+<dd>"<cite><a href="http://www.w3.org/TR/2003/REC-DOM-Level-2-HTML-20030109"
+>Document Object Model (DOM) Level 2 HTML Specification</a></cite>",
+J. Stenback <i xml:lang="la">et al.</i>, 9 January 2003.<br />
+Available at: http://www.w3.org/TR/2003/REC-DOM-Level-2-HTML-20030109</dd>
+
+<dt><a id="ref-html4">[HTML4]</a></dt>
+<dd><p>"<a href="http://www.w3.org/TR/1999/REC-html401-19991224/">HTML 4.01
+Specification</a>", W3C Recommendation, D. Raggett, A. Le&#160;Hors,
+I. Jacobs, <abbr title="editors">eds.</abbr>, 24 December 1999.
+Available at: http://www.w3.org/TR/1999/REC-html401-19991224</p>
+<p>The <a href="http://www.w3.org/TR/html401/">latest version of HTML 4.01</a>
+is available at: http://www.w3.org/TR/html401</p>
+<p>The <a href="http://www.w3.org/TR/html4/">latest version of HTML 4</a>
+is available at: http://www.w3.org/TR/html4</p></dd>
+
+<dt><a id="ref-http">[HTTP]</a></dt>
+<dd>"<a href="http://www.rfc-editor.org/rfc/rfc2616.txt">Hypertext
+Transfer Protocol -- HTTP/1.1</a>", RFC 2616, J. Gettys, R. Fielding,
+J. Mogul, H. Frystyk, L. Masinter, P. Leach and T. Berners-Lee, June 1999.
+Available at: http://www.rfc-editor.org/rfc/rfc2616.txt</dd>
+
+<dt><a id="ref-mathml2">[MathML2]</a></dt>
+<dd><p>"<a href="http://www.w3.org/TR/2001/REC-MathML2-20010221/">Mathematical
+Markup Language (MathML) Version 2.0</a>", W3C Recommendation,
+D. Carlisle, P. Ion, R. Miner, N. Poppelier, <abbr>eds.</abbr>,
+21 February 2001.
+Available at: http://www.w3.org/TR/2001/REC-MathML2-20010221</p>
+<p>The <a href="http://www.w3.org/TR/MathML2/">latest version</a> is
+available at: http://www.w3.org/TR/MathML2</p></dd>
+
+<dt><a id="ref-rfc2854">[RFC2854]</a></dt>
+<dd>"<a href="http://www.rfc-editor.org/rfc/rfc2854.txt">The 'text/html'
+Media Type</a>", RFC 2854, D. Connolly, L. Masinter, June 2000.
+Available at: http://www.rfc-editor.org/rfc/rfc2854.txt</dd>
+
+<dt><a id="ref-rfc3023">[RFC3023]</a></dt>
+<dd>"<a href="http://www.rfc-editor.org/rfc/rfc3023.txt">XML Media Types</a>",
+RFC3023, M. Murata, S. St.Laurent, D. Kohn, January 2001.
+Available at: http://www.rfc-editor.org/rfc/rfc3023.txt</dd>
+
+<dt><a id="ref-rfc3236">[RFC3236]</a></dt>
+<dd>"<a href="http://www.rfc-editor.org/rfc/rfc3236.txt">The
+'application/xhtml+xml' Media Type</a>", RFC 3236, M. Baker, P. Stark,
+January 2002. Available at: http://www.rfc-editor.org/rfc/rfc3236.txt</dd>
+
+<dt id="ref-validator">[VALIDATOR]</dt>
+<dd><p><a href="http://validator.w3.org">The W3C Markup Validation
+    Service</a> available at http://validator.w3.org.</p></dd>
+
+<dt id="ref-xhtml1">[XHTML1]</dt>
+<dd><p>"<a href="http://www.w3.org/TR/2002/REC-xhtml1-20020801/"
+>XHTML&#8482; 1.0 The Extensible HyperText Markup Language (Second Edition):
+A Reformulation of HTML 4 in XML 1.0</a>", W3C Recommendation,
+S. Pemberton <span xml:lang="lt">et al.</span>, August 2002.
+Available at: http://www.w3.org/TR/2002/REC-xhtml1-20020801</p>
+<p>The <a href="http://www.w3.org/TR/2000/REC-xhtml1-20000126">first edition</a>
+is available at: http://www.w3.org/TR/2000/REC-xhtml1-20000126</p>
+<p>The <a href="http://www.w3.org/TR/xhtml1">latest version</a> is
+available at: http://www.w3.org/TR/xhtml1</p></dd>
+
+<dt><a id="ref-xhtml11">[XHTML11]</a></dt>
+<dd><p>"<a href="http://www.w3.org/TR/2001/REC-xhtml11-20010531/">XHTML&#8482;
+1.1 - Module-based XHTML</a>", W3C Recommendation,
+M. Altheim, S. McCarron, <abbr>eds.</abbr>, 31 May 2001.
+Available at: http://www.w3.org/TR/2001/REC-xhtml11-20010531</p>
+<p>The <a href="http://www.w3.org/TR/xhtml11/">latest version</a>
+is available at: http://www.w3.org/TR/xhtml11</p></dd>
+
+<dt><a id="ref-xhtml-basic">[XHTMLBasic]</a></dt>
+<dd><p>"<a href="http://www.w3.org/TR/2008/REC-xhtml-basic-20080729/"
+>XHTML&#8482; Basic 1.1</a>", W3C Recommendation,
+S. McCarron, M. Ishikawa 
+<abbr>eds.</abbr>, 29 July 2008.
+Available at: http://www.w3.org/TR/2008/REC-xhtml-basic-20080729</p>
+<p>The <a href="http://www.w3.org/TR/xhtml-basic/">latest version</a> is
+available at: http://www.w3.org/TR/xhtml-basic</p></dd>
+
+<dt><a id="ref-xhtml-m12n">[XHTMLM12N]</a></dt>
+<dd><p>"<a href="http://www.w3.org/TR/2008/REC-xhtml-modularization-20081008/"
+>XHTML&#8482; Modularization 1.1</a>", W3C Recommendation,
+D. Austin et. al., <abbr>eds.</abbr>, 8 October 2008.
+Available at: http://www.w3.org/TR/2008/REC-xhtml-modularization-20081008</p>
+<p>The <a href="http://www.w3.org/TR/xhtml-modularization/">latest version</a>
+is at: http://www.w3.org/TR/xhtml-modularization</p></dd>
+
+<dt><a id="ref-xhtml-mathml">[XHTML+MathML]</a></dt>
+<dd>"<a href="http://www.w3.org/TR/MathML2/dtd/xhtml-math11-f.dtd">XHTML
+plus Math 1.1 <abbr title="Document Type Definition">DTD</abbr></a>",
+"A.2 MathML as a DTD Module",  Mathematical Markup Language (MathML)
+Version 2.0. Available at:
+http://www.w3.org/TR/MathML2/dtd/xhtml-math11-f.dtd</dd>
+
+  <dt class="normref" id="ref-xml">[XML]</dt>
+  <dd>"<cite><a href="http://www.w3.org/TR/2006/REC-xml-20060816"
+    >Extensible Markup Language (<acronym
+    title="Extensible Markup Language">XML</acronym>) 1.0
+    (Fourth Edition)</a></cite>",
+    <acronym title="World Wide Web Consortium">W3C</acronym> Recommendation,
+    T. Bray, J. Paoli, C. M. Sperberg-McQueen, E. Maler, F. Yergeau,
+    <abbr title="editors">eds.</abbr>, 16 August 2006. Available at:
+        http://www.w3.org/TR/2006/REC-xml-20060816</dd>
+
+</dl>
+
+<h1><a id="changes">Appendix D. Changes from Previous Version</a></h1>
+
+<p>Restructured to be more focused on <code>text/html</code> and <code>application/xhtml+xml</code></p>
+<p>Migrated compatibility guidelines from XHTML 1.0 into this note so 
+they can be updated and extended more easily.</p>
+
+<h1 id="acks">Appendix E. Acknowledgements</h1>
+
+<p>This document is the work of many people over the course of many years. Unfortunately, it is impossible to properly acknowledge all of them.  Suffice to say that they all have the thanks of the working group.  A few contributors went above and beyond:</p>
+<ul>
+    <li>Simon Pieters, Opera</li>
+</ul>
+
+<p>At the time of this publication, the members of the XHTML 2 
+Working Group were:</p>
+
+<ul>
+<li>Roland Merrick
+<acronym title="International Business Machines">IBM</acronym>
+(<acronym title="Extensible HyperText Markup Language">XHTML</acronym> 2 Working Group Co-Chair)</li>
+<li>Steven Pemberton, <acronym title="Centrum voor Wiskunde en Informatica"
+    xml:lang="nl">CWI</acronym> 
+(<acronym title="Extensible HyperText Markup Language">XHTML</acronym> 2 Working Group Co-Chair)</li>
+<li>Mark Birbeck, webBackplane</li>
+<li>Susan Borgrink, Progeny Systems</li>
+<li>Christina Bottomley, Society for Technical Communication (STC)</li>
+<li>Alessio Cartocci, International Webmasters Association / HTML Writers Guild (IWA-HWG)</li>
+<li>Alexander Graf, University of Innsbruck</li>
+<li>Tina Holmboe, Greytower Technologies</li>
+<li>John Kugelman, Progeny Systems</li>
+<li>Luca Mascaro, International Webmasters Association / HTML Writers Guild (IWA-HWG)</li>
+<li>Shane McCarron, Aptest</li>
+<li>Michael Rawling, IVIS Group Limited</li>
+<li>Gregory Rosmaita, Invited Expert</li>
+<li>Sebastian Schnitzenbaumer, Dreamlab Technologies AG</li>
+<li>Richard Schwerdtfeger,
+<acronym title="International Business Machines">IBM</acronym></li>
+<li>Elias Torres, 
+<acronym title="International Business Machines">IBM</acronym></li>
+<li>Masataka Yakura, Mitsue-Links Co., Ltd.</li>
+<li>Toshihiko Yamakami, ACCESS Co., Ltd. </li>
+</ul>
+
+<script src="https://www.w3.org/scripts/TR/fixup.js"></script></body>
+</html>
